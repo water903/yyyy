@@ -34,12 +34,10 @@ youtube.com###actions :is([aria-label="Share"],[aria-label="超級感謝"],[aria
 
 !在影片品質選單中隱藏“1080p Premium”
 youtube.com##.ytp-quality-menu .ytp-menuitem:has(.ytp-premium-label)
-!/or the end screen / auto play next
-!/endscreen.js$script,xhr,important,domain=youtube.com
 ! 影片 推薦影片
 youtube.com###related
 ! 影片 miniplayer
-youtube.com##.ytp-button.ytp-miniplayer-button
+!youtube.com##.ytp-button.ytp-miniplayer-button
 ! 影片 size
 youtube.com##.ytp-button.ytp-size-button
 
