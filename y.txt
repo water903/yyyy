@@ -1,3 +1,8 @@
+! Title:youtuuBlocOrigin
+! Expires: 1 days
+! Description:自用uBlock Origin youtube 
+! Homepage: https://github.com/water903/yyy
+! License:  
 ! >>>>>Youtube<<<<<
 !首頁 - 縮圖進度色調
 youtube.com###progress.ytd-thumbnail-overlay-resume-playback-renderer:style(background: #F00 !important;)
