@@ -1,6 +1,6 @@
 ! Title:youtuuBlocOrigin
 ! Expires: 1 days
-! Description:自用uBlock Origin youtube 
+! Description:自用uBlock Origin youtube music.youtube
 ! Homepage: https://github.com/water903/yyy
 ! License:  
 ! >>>>>Youtube<<<<<
