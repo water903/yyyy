@@ -1,8 +1,6 @@
 ! Title:youtuuBlocOrigin
-! Expires: 1 days
-! Description:自用uBlock Origin youtube music.youtube
+! Description:自用uBlock Origin youtube youtubemusic
 ! Homepage: https://github.com/water903/yyyy
-
 
 >>>>>Youtube Music<<<<<
 !Youtube Music only audio
@@ -29,17 +27,11 @@ youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-ty
 youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope > .ytd-guide-entry-renderer.style-scope.yt-simple-endpoint:has-text(/Explore/)
 youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope > .ytd-guide-entry-renderer.style-scope.yt-simple-endpoint:has-text(/首頁/)
 youtube.com###footer
-!隱藏主頁建議來自我的「稍後觀看」播放清單的影片
-!youtube.com##ytd-rich-item-renderer:has([aria-label*='來自「稍後觀看」播放清單'])
-!.com##ytd-browse[page-subtype="home"] ytd-rich-item-renderer:has([aria-label='來自「稍後觀看」播放清單'])
-!youtube.com##ytd-browse[page-subtype="home"] ytd-rich-item-renderer:has([class*='來自「稍後觀看」播放清單'])
+!(失效)隱藏主頁建議來自我的「稍後觀看」播放清單的影片
 ! YT Search - keep only videos (no shorts), channels and playlists
 youtube.com##ytd-search ytd-item-section-renderer>#contents>:is(:not(ytd-video-renderer,ytd-channel-renderer,ytd-playlist-renderer,yt-lockup-view-model,yt-showing-results-for-renderer,[icon-name="promo-full-height:EMPTY_SEARCH"]),ytd-video-renderer:has([aria-label="Shorts"]))
 !,ytd-secondary-search-container-renderer
 ! 影片下方多餘按鈕
-!youtube.com##.ytd-download-button-renderer
-!youtube.com###flexible-item-buttons [aria-label="超級感謝"], [aria-label="剪輯片段"]
-!youtube.com##.yt-spec-button-view-model:has([aria-label="剪輯片段"])
 youtube.com###actions :is([aria-label="Share"],[aria-label="超級感謝"],[aria-label="剪輯片段"],[aria-label="Save to playlist"],[aria-label="More actions"]), #social-links :is([aria-label="Videos"],[aria-label="About"]), ytd-download-button-renderer
 
 !在影片品質選單中隱藏“1080p Premium”
@@ -50,7 +42,8 @@ youtube.com###related
 !youtube.com##.ytp-button.ytp-miniplayer-button
 ! 影片 size
 youtube.com##.ytp-button.ytp-size-button
-
+!刪除 YouTube 的音量增加/減少動畫
+youtube.com##.html5-video-player > div > .ytp-bezel[aria-label$="volume"]
 !和/或片尾畫面/接下來自動播放
 /endscreen.js$script,xhr,important,domain=youtube.com
 ! 影片結束時 結束卡片
@@ -60,6 +53,11 @@ youtube.com##.ytp-ce-element-shadow
 ! 影片縮圖 加入待播清單
 !youtube.com###hover-overlays>ytd-thumbnail-overlay-toggle-button-renderer[aria-label="加入待播清單"]
 youtube.com##[aria-label="加入待播清單"]
+! logo旁的地區代號
+youtube.com###country-code
+!滑鼠懸停在 YouTube 影片上時消除影片中的白霧
+youtube.com##.ytp-gradient-bottom
+youtube.com##.ytp-gradient-top
 ! 播放清單 推薦播放清單 推薦影片
 youtube.com##ytd-continuation-item-renderer.ytd-section-list-renderer.style-scope
 
@@ -133,15 +131,6 @@ youtube.com##.ytd-live-chat-frame.style-scope > yt-button-shape:has-text(/重播
 ! 暫停後推薦
 youtube-nocookie.com,youtube.com##.ytp-pause-overlay, .show-video-thumbnail-button
 ~youtube-nocookie.com,~youtube.com##iframe ~ #topvbar > #rvid
-
-! logo旁的地區代號
-youtube.com###country-code
-!滑鼠懸停在 YouTube 影片上時消除影片中的白霧
-youtube.com##.ytp-gradient-bottom
-youtube.com##.ytp-gradient-top
-
-!刪除 YouTube 的音量增加/減少動畫
-youtube.com##.html5-video-player > div > .ytp-bezel[aria-label$="volume"]
 
 !ghost renderer
 youtube.com###frosted-glass
