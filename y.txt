@@ -2,7 +2,7 @@
 ! Description:自用uBlock Origin youtube youtubemusic
 ! Homepage: https://github.com/water903/yyyy
 
->>>>>Youtube Music<<<<<
+! >>>>>Youtube Music<<<<<
 !Youtube Music only audio
 music.youtube.com##+js(trusted-replace-xhr-response, "audioConfig":{, '"audioConfig":{"playAudioOnly":true,', /player?)
 
@@ -65,8 +65,7 @@ youtube.com##ytd-continuation-item-renderer.ytd-section-list-renderer.style-scop
 ! youtube.com##yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer.style-scope:not(:first-child,:last-child):not(:has-text(/熱門/))
 youtube.com##ytd-browse[page-subtype="home"] yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer.style-scope:not(:first-child,:last-child)
 ! 影片popup 多餘按鈕
-!youtube.com##ytd-menu-service-item-renderer:has-text(加入待播清單)
-youtube.com##.iron-selected.ytd-menu-popup-renderer.style-scope > .ytd-menu-service-item-renderer.style-scope
+youtube.com##ytd-menu-service-item-renderer:has-text(/加入待播清單/)
 youtube.com##ytd-menu-service-item-download-renderer.ytd-menu-popup-renderer
 !移除 頻道ICON上的直播標籤
 youtube.com##.yt-spec-avatar-shape__live-badge
