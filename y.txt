@@ -26,6 +26,7 @@ youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-ty
 youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(4)
 youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope > .ytd-guide-entry-renderer.style-scope.yt-simple-endpoint:has-text(/Explore/)
 youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope > .ytd-guide-entry-renderer.style-scope.yt-simple-endpoint:has-text(/首頁/)
+.ytd-guide-downloads-entry-renderer.style-scope
 youtube.com###footer
 !(失效)隱藏主頁建議來自我的「稍後觀看」播放清單的影片
 ! YT Search - keep only videos (no shorts), channels and playlists
@@ -60,3 +61,88 @@ youtube.com##.ytp-gradient-bottom
 youtube.com##.ytp-gradient-top
 ! 播放清單 推薦播放清單 推薦影片
 youtube.com##ytd-continuation-item-renderer.ytd-section-list-renderer.style-scope
+
+! 首頁上方 讓你耳目一新 多餘按鈕
+! youtube.com##yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer.style-scope:not(:first-child,:last-child):not(:has-text(/熱門/))
+youtube.com##ytd-browse[page-subtype="home"] yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer.style-scope:not(:first-child,:last-child)
+! 影片popup 多餘按鈕
+youtube.com##ytd-menu-service-item-renderer:has-text(/加入待播清單/)
+youtube.com##ytd-menu-service-item-download-renderer.ytd-menu-popup-renderer
+!移除 頻道ICON上的直播標籤
+youtube.com##.yt-spec-avatar-shape__live-badge
+! 移除 youtube 直播紅環
+youtube.com##.yt-spec-avatar-shape--live-ring::after
+!隱藏 YouTube 播放速度滑桿
+youtube.com##.ytp-menuitem-with-footer.ytp-menuitem
+!進度條圓點
+youtube.com##.ytp-scrubber-container
+!付費促銷訊息連結
+youtube.com##.YtmPaidContentOverlayHost 
+youtube.com##.ytp-paid-content-overlay-link
+
+! 隱藏 通知我 按鈕
+youtube.com###buttons > .ytd-rich-grid-media.style-scope
+! YT -將巨大的搜尋縮圖恢復為正常縮圖
+youtube.com##ytd-two-column-search-results-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] #primary.ytd-two-column-search-results-renderer, ytd-search[has-search-header][has-bigger-thumbs] #header.ytd-search:style(max-width: 1096px !important)
+youtube.com##ytd-channel-renderer[use-bigger-thumbs][bigger-thumb-style=BIG] #avatar-section.ytd-channel-renderer, ytd-channel-renderer[use-bigger-thumbs] #avatar-section.ytd-channel-renderer:style(max-width: 360px !important)
+youtube.com##ytd-video-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-thumbnail.ytd-video-renderer, ytd-video-renderer[use-search-ui] ytd-thumbnail.ytd-video-rendererytd-playlist-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-playlist-thumbnail.ytd-playlist-renderer, ytd-playlist-renderer[use-bigger-thumbs] ytd-playlist-thumbnail.ytd-playlist-renderer:style(max-width: 360px !important)
+youtube.com##ytd-radio-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-thumbnail.ytd-radio-renderer, ytd-radio-renderer[use-bigger-thumbs] ytd-thumbnail.ytd-radio-renderer, ytd-radio-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-playlist-thumbnail.ytd-radio-renderer:style(max-width: 360px !important)
+youtube.com##ytd-movie-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] .thumbnail-container.ytd-movie-renderer, ytd-movie-renderer[use-bigger-thumbs] .thumbnail-container.ytd-movie-renderer:style(max-width: 360px !important)
+youtube.com##ytd-promoted-video-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-thumbnail.ytd-promoted-video-renderer, ytd-promoted-sparkles-web-renderer[web-search-layout][use-bigger-thumbs][bigger-thumbs-style=BIG] #thumbnail-container.ytd-promoted-sparkles-web-renderer, ytd-text-image-no-button-layout-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] #text-image-container.ytd-text-image-no-button-layout-renderer:style(max-width: 360px !important)
+
+! 頻道頁面 空白部分
+youtube.com##ytd-browse[page-subtype="channels"] ytd-two-column-browse-results-renderer:style(max-width: unset !important; width: 95% !important;)
+youtube.com##ytd-browse[page-subtype="channels"] #page-header-container > *:style(padding: 0 2.5% !important;)
+!資訊面板中的主題上下文
+youtube.com,youtube-nocookie.com##.ytp-info-panel-preview
+! 隱藏 播放清單 推薦影片
+youtube.com##ytd-browse[page-subtype="home"] ytd-rich-section-renderer:not(:has(ytd-feed-nudge-renderer))
+!首頁恢復為正常縮圖
+!youtube.com##.ytd-rich-grid-renderer:style(--ytd-rich-grid-items-per-row:6;min-width:240px )
+! remove background transparency from youtube title bar
+!youtube.com##hmtl, [light]:style(--yt-frosted-glass-desktop: rgba(255, 255, 255, 1.0) !important;)
+!youtube.com##hmtl[dark], [dark]:style(--yt-frosted-glass-desktop: rgba(15, 15, 15, 1.0) !important;)
+
+!防止即時更新統計資料（例如按讚和觀看次數）
+||youtube.com/youtubei/v1/updated_metadata
+!隱藏「智慧」動畫 這些動畫通常包含“lottie”邊框
+youtube.com##yt-smartimation > :not(.smartimation__content)
+youtube.com##yt-animated-action>:not(.smartimation__content,.animated-action__content-with-background)
+youtube.com##:is(.smartimation__content,.animated-action__content-with-background)>:has(>lottie-component)
+!Live即時反應疊加
+youtube.com##yt-reaction-control-panel-view-model
+youtube.com##yt-reaction-control-panel-overlay-view-model
+! 移除 pop ad
+youtube.com##ytd-popup-container > tp-yt-paper-dialog > ytd-mealbar-promo-renderer, ytd-popup-container > tp-yt-paper-dialog > yt-mealbar-promo-renderer:has-text(/YouTube TV|成為這個頻道的會員/)
+! change color of youtube playback head dot
+youtube.com##html[refresh], [refresh]:style(--yt-spec-static-brand-red: #FF0000 !important; --yt-spec-static-overlay-background-brand: rgba(255, 0, 0, 0.9) !important;)
+! change color of youtube notification badge and font color
+youtube.com##.yt-spec-icon-badge-shape__badge:style(background: #CC0000 !important; color: #FFF !important;)
+! remove background transparency from youtube title bar & change color of player settings icon
+youtube.com##html, [light]:style(--yt-frosted-glass-desktop: rgba(255, 255, 255, 1.0) !important; --yt-spec-red-indicator: #FF0000 !important;)
+youtube.com##html[dark], [dark]:style(--yt-frosted-glass-desktop: rgba(15, 15, 15, 1.0) !important; --yt-spec-red-indicator: #FF0000 !important;)
+! change color of youtube link preview icon in video description更改影片描述中 YouTube 連結預覽圖示的顏色
+youtube.com##.yt-core-attributed-string--inline-block-mod > img:style(filter: brightness(100%) saturate(100%) hue-rotate(18deg) !important;)
+! 移除重播聊天室
+youtube.com##.ytd-live-chat-frame.style-scope > yt-button-shape:has-text(/重播/)
+!隱藏僅限會員的視頻
+!youtube.com##ytd-rich-item-renderer.ytd-rich-grid-renderer:has(.badge-style-type-members-only)
+!youtube.com##:is(ytd-rich-item-renderer,ytd-compact-video-renderer,ytd-video-renderer,ytd-grid-video-renderer):has(.badge-style-type-members-only)
+! 暫停後推薦
+youtube-nocookie.com,youtube.com##.ytp-pause-overlay, .show-video-thumbnail-button
+~youtube-nocookie.com,~youtube.com##iframe ~ #topvbar > #rvid
+
+!ghost renderer
+youtube.com###frosted-glass
+youtube.com##ytd-ghost-grid-renderer
+!playlist背板顏色移除
+youtube.com##ytd-browse[page-subtype="playlist"] .page-header-view-model-wiz__page-header-background:not(.page-header-view-model-wiz__scroll-container)
+!標題字體大小
+youtube.com##ytd-rich-grid-media #video-title:style(font-size: 20px !important;)
+!搜尋建議下拉選單 刪除縮圖
+youtube.com##.ytSuggestionComponentVisualSuggestThumbnail
+!解決 YouTube 主頁網格間隙問題
+youtube.com##ytd-rich-item-renderer[is-in-first-column]:style(margin-left: calc(var(--ytd-rich-grid-item-margin)/2) !important;)
+youtube.com##ytd-rich-grid-row, #contents.ytd-rich-grid-row:style(display:contents !important;)
+! YouTube 主頁和訂閱（網格視圖）- 隱藏 Shorts 部分
+youtube.com##[is-shorts]
