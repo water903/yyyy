@@ -26,7 +26,8 @@ youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-ty
 youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(4)
 youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope > .ytd-guide-entry-renderer.style-scope.yt-simple-endpoint:has-text(/Explore/)
 youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope > .ytd-guide-entry-renderer.style-scope.yt-simple-endpoint:has-text(/首頁/)
-#downloads-entry > .ytd-guide-entry-renderer.style-scope.yt-simple-endpoint
+youtube.com###downloads-entry > .ytd-guide-entry-renderer.style-scope.yt-simple-endpoint
+youtube.com##ytd-mini-guide-entry-renderer.ytd-mini-guide-renderer.style-scope:nth-of-type(5)
 youtube.com###footer
 !(失效)隱藏主頁建議來自我的「稍後觀看」播放清單的影片
 ! YT Search - keep only videos (no shorts), channels and playlists
@@ -63,7 +64,6 @@ youtube.com##.ytp-gradient-top
 youtube.com##ytd-continuation-item-renderer.ytd-section-list-renderer.style-scope
 
 ! 首頁上方 讓你耳目一新 多餘按鈕
-! youtube.com##yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer.style-scope:not(:first-child,:last-child):not(:has-text(/熱門/))
 youtube.com##ytd-browse[page-subtype="home"] yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer.style-scope:not(:first-child,:last-child)
 ! 影片popup 多餘按鈕
 youtube.com##ytd-menu-service-item-renderer:has-text(/加入待播清單/)
@@ -97,11 +97,6 @@ youtube.com##ytd-browse[page-subtype="channels"] #page-header-container > *:styl
 youtube.com,youtube-nocookie.com##.ytp-info-panel-preview
 ! 隱藏 播放清單 推薦影片
 youtube.com##ytd-browse[page-subtype="home"] ytd-rich-section-renderer:not(:has(ytd-feed-nudge-renderer))
-!首頁恢復為正常縮圖
-!youtube.com##.ytd-rich-grid-renderer:style(--ytd-rich-grid-items-per-row:6;min-width:240px )
-! remove background transparency from youtube title bar
-!youtube.com##hmtl, [light]:style(--yt-frosted-glass-desktop: rgba(255, 255, 255, 1.0) !important;)
-!youtube.com##hmtl[dark], [dark]:style(--yt-frosted-glass-desktop: rgba(15, 15, 15, 1.0) !important;)
 
 !防止即時更新統計資料（例如按讚和觀看次數）
 ||youtube.com/youtubei/v1/updated_metadata
