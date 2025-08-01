@@ -26,7 +26,7 @@ youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-ty
 youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(4)
 youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope > .ytd-guide-entry-renderer.style-scope.yt-simple-endpoint:has-text(/Explore/)
 youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope > .ytd-guide-entry-renderer.style-scope.yt-simple-endpoint:has-text(/首頁/)
-.ytd-guide-downloads-entry-renderer.style-scope
+#downloads-entry > .ytd-guide-entry-renderer.style-scope.yt-simple-endpoint
 youtube.com###footer
 !(失效)隱藏主頁建議來自我的「稍後觀看」播放清單的影片
 ! YT Search - keep only videos (no shorts), channels and playlists
