@@ -41,8 +41,7 @@ youtube.com##ytd-rich-item-renderer:has(div.ytThumbnailOverlayProgressBarHostWat
 ! 影片下方多餘按鈕
 youtube.com###actions :is([aria-label="Share"],[aria-label="超級感謝"],[aria-label="Save to playlist"],[aria-label="More actions"]), #social-links :is([aria-label="Videos"],[aria-label="About"])
 !剪輯片段
-youtube.com##.iron-selected.ytd-menu-popup-renderer.style-scope, ytd-download-button-renderer
-
+youtube.com##.iron-selected.ytd-menu-popup-renderer.style-scope[aria-label="剪輯片段"], ytd-download-button-renderer
 !在影片品質選單中隱藏“1080p Premium”
 youtube.com##.ytp-quality-menu .ytp-menuitem:has(.ytp-premium-label)
 ! 影片 推薦影片
