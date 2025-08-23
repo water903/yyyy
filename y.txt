@@ -29,12 +29,19 @@ youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope > .
 youtube.com###downloads-entry > .ytd-guide-entry-renderer.style-scope.yt-simple-endpoint
 youtube.com##ytd-mini-guide-entry-renderer.ytd-mini-guide-renderer.style-scope:nth-of-type(5)
 youtube.com###footer
-!(失效)隱藏主頁建議來自我的「稍後觀看」播放清單的影片
-! YT Search - keep only videos (no shorts), channels and playlists
-youtube.com##ytd-search ytd-item-section-renderer>#contents>:is(:not(ytd-video-renderer,ytd-channel-renderer,ytd-playlist-renderer,yt-lockup-view-model,yt-showing-results-for-renderer,[icon-name="promo-full-height:EMPTY_SEARCH"]),ytd-video-renderer:has([aria-label="Shorts"]))
-!,ytd-secondary-search-container-renderer
+
+! Hide fully watched videos on homepage
+youtube.com##ytd-rich-item-renderer:has(div.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment[style^="width: 100%"])
+! Hide fully watched videos on sidebar
+!youtube.com##yt-lockup-view-model:has(div.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment[style^="width: 100%"])
+! Hide fully watched videos in a channel
+!youtube.com##ytd-rich-item-renderer:has(#progress[style^="width: 100%"])
+
+
 ! 影片下方多餘按鈕
-youtube.com###actions :is([aria-label="Share"],[aria-label="超級感謝"],[aria-label="剪輯片段"],[aria-label="Save to playlist"],[aria-label="More actions"]), #social-links :is([aria-label="Videos"],[aria-label="About"]), ytd-download-button-renderer
+youtube.com###actions :is([aria-label="Share"],[aria-label="超級感謝"],[aria-label="Save to playlist"],[aria-label="More actions"]), #social-links :is([aria-label="Videos"],[aria-label="About"])
+!剪輯片段
+youtube.com##.iron-selected.ytd-menu-popup-renderer.style-scope, ytd-download-button-renderer
 
 !在影片品質選單中隱藏“1080p Premium”
 youtube.com##.ytp-quality-menu .ytp-menuitem:has(.ytp-premium-label)
@@ -60,21 +67,21 @@ youtube.com###country-code
 !滑鼠懸停在 YouTube 影片上時消除影片中的白霧
 youtube.com##.ytp-gradient-bottom
 youtube.com##.ytp-gradient-top
-! 播放清單 推薦播放清單 推薦影片
+!移除 播放清單 推薦播放清單 推薦影片
 youtube.com##ytd-continuation-item-renderer.ytd-section-list-renderer.style-scope
 
-! 首頁上方 讓你耳目一新 多餘按鈕
+!移除 首頁上方 讓你耳目一新 多餘按鈕
 youtube.com##ytd-browse[page-subtype="home"] yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer.style-scope:not(:first-child,:last-child)
-! 影片popup 多餘按鈕
+!移除 影片popup 多餘按鈕
 youtube.com##ytd-menu-service-item-renderer:has-text(/加入待播清單/)
 youtube.com##ytd-menu-service-item-download-renderer.ytd-menu-popup-renderer
 !移除 頻道ICON上的直播標籤
 youtube.com##.yt-spec-avatar-shape__live-badge
-! 移除 youtube 直播紅環
+!移除 youtube 直播紅環
 youtube.com##.yt-spec-avatar-shape--live-ring::after
 !隱藏 YouTube 播放速度滑桿
 youtube.com##.ytp-menuitem-with-footer.ytp-menuitem
-!進度條圓點
+!移除 進度條圓點
 youtube.com##.ytp-scrubber-container
 !付費促銷訊息連結
 youtube.com##.YtmPaidContentOverlayHost 
@@ -89,6 +96,9 @@ youtube.com##ytd-video-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-
 youtube.com##ytd-radio-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-thumbnail.ytd-radio-renderer, ytd-radio-renderer[use-bigger-thumbs] ytd-thumbnail.ytd-radio-renderer, ytd-radio-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-playlist-thumbnail.ytd-radio-renderer:style(max-width: 360px !important)
 youtube.com##ytd-movie-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] .thumbnail-container.ytd-movie-renderer, ytd-movie-renderer[use-bigger-thumbs] .thumbnail-container.ytd-movie-renderer:style(max-width: 360px !important)
 youtube.com##ytd-promoted-video-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-thumbnail.ytd-promoted-video-renderer, ytd-promoted-sparkles-web-renderer[web-search-layout][use-bigger-thumbs][bigger-thumbs-style=BIG] #thumbnail-container.ytd-promoted-sparkles-web-renderer, ytd-text-image-no-button-layout-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] #text-image-container.ytd-text-image-no-button-layout-renderer:style(max-width: 360px !important)
+!隱藏 YT Search keep only videos (no shorts), channels and playlists
+!youtube.com##ytd-search #contents > * > div#dismissible h2:has-text(/^\s*(People also|探索更多內容)/):upward(#dismissible)
+youtube.com##ytd-search ytd-item-section-renderer>#contents>:is(:not(ytd-video-renderer,ytd-channel-renderer,ytd-playlist-renderer,yt-lockup-view-model,yt-showing-results-for-renderer,[icon-name="promo-full-height:EMPTY_SEARCH"]),ytd-video-renderer:has([aria-label="Shorts"]))
 
 ! 頻道頁面 空白部分
 youtube.com##ytd-browse[page-subtype="channels"] ytd-two-column-browse-results-renderer:style(max-width: unset !important; width: 95% !important;)
@@ -97,12 +107,10 @@ youtube.com##ytd-browse[page-subtype="channels"] #page-header-container > *:styl
 youtube.com,youtube-nocookie.com##.ytp-info-panel-preview
 ! 隱藏 播放清單 推薦影片
 youtube.com##ytd-browse[page-subtype="home"] ytd-rich-section-renderer:not(:has(ytd-feed-nudge-renderer))
-
 !防止即時更新統計資料（例如按讚和觀看次數）
 ||youtube.com/youtubei/v1/updated_metadata
 !隱藏「智慧」動畫 這些動畫通常包含“lottie”邊框
 youtube.com##yt-smartimation > :not(.smartimation__content)
-youtube.com##yt-animated-action>:not(.smartimation__content,.animated-action__content-with-background)
 youtube.com##:is(.smartimation__content,.animated-action__content-with-background)>:has(>lottie-component)
 !Live即時反應疊加
 youtube.com##yt-reaction-control-panel-view-model
