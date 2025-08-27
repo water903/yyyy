@@ -38,7 +38,7 @@ youtube.com##ytd-rich-item-renderer:has(div.ytThumbnailOverlayProgressBarHostWat
 
 ! 影片下方多餘按鈕
 youtube.com###actions :is([aria-label="Share"],[aria-label="超級感謝"],[aria-label="Save to playlist"],[aria-label="More actions"]), #social-links :is([aria-label="Videos"],[aria-label="About"])
-youtube.com###flexible-item-buttons
+!youtube.com###flexible-item-buttons
 !影片下方更多清單 多餘按鈕
 youtube.com##.ytd-download-button-renderer
 youtube.com##ytd-menu-service-item-renderer.ytd-menu-popup-renderer.style-scope > .ytd-menu-service-item-renderer.style-scope:has-text(/加入待播清單|檢舉|剪輯片段|超級感謝/)
