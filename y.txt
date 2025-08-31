@@ -140,7 +140,7 @@ youtube-nocookie.com,youtube.com##.ytp-pause-overlay, .show-video-thumbnail-butt
 youtube.com###frosted-glass
 youtube.com##ytd-ghost-grid-renderer
 !playlist背板顏色移除
-youtube.com##ytd-browse[page-subtype="playlist"] .page-header-view-model-wiz__page-header-background:not(.page-header-view-model-wiz__scroll-container)
+youtube.com##ytd-browse[page-subtype="playlist"] .ytCinematicContainerViewModelHost
 !標題字體大小
 youtube.com##ytd-rich-grid-media #video-title:style(font-size: 20px !important;)
 !搜尋建議下拉選單 刪除縮圖
