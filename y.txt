@@ -29,6 +29,8 @@ youtube.com###downloads-entry > .ytd-guide-entry-renderer.style-scope.yt-simple-
 youtube.com##ytd-mini-guide-entry-renderer.ytd-mini-guide-renderer.style-scope:nth-of-type(5)
 youtube.com###footer
 
+! YT Home - Hide Mixes
+youtube.com##ytd-rich-item-renderer:has([href*="start_radio=1"])
 ! Hide fully watched videos on homepage
 youtube.com##ytd-rich-item-renderer:has(div.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment[style^="width: 100%"])
 ! Hide fully watched videos on sidebar
@@ -63,7 +65,6 @@ youtube.com##.videowall-endscreen
 youtube.com##.ytp-ce-element
 youtube.com##.ytp-ce-element-shadow
 ! 影片縮圖 加入待播清單
-!youtube.com###hover-overlays>ytd-thumbnail-overlay-toggle-button-renderer[aria-label="加入待播清單"]
 youtube.com##[aria-label="加入待播清單"]
 ! logo旁的地區代號
 youtube.com###country-code
@@ -88,7 +89,6 @@ youtube.com##.YtmPaidContentOverlayHost
 youtube.com##.ytp-paid-content-overlay-link
 
 ! 隱藏 通知我 按鈕
-youtube.com##toggle-button-view-model > .ytSpecButtonViewModelHost
 youtube.com###buttons > .ytd-rich-grid-media.style-scope
 ! YT -將巨大的搜尋縮圖恢復為正常縮圖
 youtube.com##ytd-two-column-search-results-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] #primary.ytd-two-column-search-results-renderer, ytd-search[has-search-header][has-bigger-thumbs] #header.ytd-search:style(max-width: 1096px !important)
