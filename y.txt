@@ -89,6 +89,7 @@ youtube.com##.YtmPaidContentOverlayHost
 youtube.com##.ytp-paid-content-overlay-link
 
 ! 隱藏 通知我 按鈕
+youtube.com##.ytLockupAttachmentsViewModelHost
 youtube.com###buttons > .ytd-rich-grid-media.style-scope
 ! YT -將巨大的搜尋縮圖恢復為正常縮圖
 youtube.com##ytd-two-column-search-results-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] #primary.ytd-two-column-search-results-renderer, ytd-search[has-search-header][has-bigger-thumbs] #header.ytd-search:style(max-width: 1096px !important)
