@@ -1,87 +1,4 @@
 ! Title:youtuuBlocOrigin
-! Description:自用uBlock Origin youtube youtubemusic
-! Homepage: https://github.com/water903/yyyy
-
-! >>>>>Youtube Music<<<<<
-!Youtube Music only audio
-music.youtube.com##+js(trusted-replace-xhr-response, "audioConfig":{, '"audioConfig":{"playAudioOnly":true,', /player?)
-
-! >>>>>Youtube<<<<<
-!首頁 - 縮圖進度色調
-youtube.com###progress.ytd-thumbnail-overlay-resume-playback-renderer:style(background: #F00 !important;)
-!進度欄在網站上方刷新
-youtube.com###progress.yt-page-navigation-progress:style(background: #F00 !important;)
-!阻止播放器上的粉紅色進度條
-youtube.com##.ytp-play-progress:style(background: #F00 !important;)
-! Homepage - distractions (non-videos) | temporary fix: remove gaps + ghost renderer
-youtube.com##ytd-browse[page-subtype="home"] #contents.ytd-rich-grid-renderer > :not(ytd-rich-item-renderer,ytd-continuation-item-renderer)
-youtube.com##ytd-browse[page-subtype="subscriptions"] #contents.ytd-rich-grid-renderer > :not(ytd-rich-item-renderer,ytd-continuation-item-renderer)
-! 首頁上方多餘按鈕
-youtube.com##.style-default.ytd-masthead.style-scope
-youtube.com###voice-search-button
-youtube.com###buttons > ytd-button-renderer.ytd-masthead
-! 首頁右方多餘按鈕
-youtube.com###section-items > ytd-guide-entry-renderer.ytd-guide-collapsible-section-entry-renderer.style-scope:not(:nth-child(4))
-youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(3)
-youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(4)
-youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope > .ytd-guide-entry-renderer.style-scope.yt-simple-endpoint:has-text(/Explore|首頁/)
-youtube.com###downloads-entry > .ytd-guide-entry-renderer.style-scope.yt-simple-endpoint
-youtube.com##ytd-mini-guide-entry-renderer.ytd-mini-guide-renderer.style-scope:nth-of-type(5)
-youtube.com###footer
-
-! YT Home - Hide Mixes
-youtube.com##ytd-rich-item-renderer:has([href*="start_radio=1"])
-! Hide fully watched videos on homepage
-youtube.com##ytd-rich-item-renderer:has(div.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment[style^="width: 100%"])
-! Hide fully watched videos on sidebar
-!youtube.com##yt-lockup-view-model:has(div.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment[style^="width: 100%"])
-! Hide fully watched videos in a channel
-!youtube.com##ytd-rich-item-renderer:has(#progress[style^="width: 100%"])
-
-! 影片下方多餘按鈕
-youtube.com###actions :is([aria-label="Share"],[aria-label="剪輯片段"],[aria-label="超級感謝"],[aria-label="Save to playlist"],[aria-label="More actions"]), #social-links :is([aria-label="Videos"],[aria-label="About"])
-youtube.com##yt-list-item-view-model.yt-list-item-view-model:nth-of-type(1)
-!youtube.com###flexible-item-buttons
-!影片下方更多清單 多餘按鈕
-youtube.com##.ytd-download-button-renderer
-youtube.com##ytd-menu-service-item-renderer.ytd-menu-popup-renderer.style-scope > .ytd-menu-service-item-renderer.style-scope:has-text(/加入待播清單|檢舉|剪輯片段|超級感謝/)
-! 影片選項 移除 加入待播清單和下載
-youtube.com##yt-list-item-view-model.yt-list-item-view-model-wiz:nth-of-type(1)
-youtube.com##ytd-menu-service-item-download-renderer.ytd-menu-popup-renderer
-!在影片品質選單中隱藏“1080p Premium”
-youtube.com##.ytp-quality-menu .ytp-menuitem:has(.ytp-premium-label)
-! 影片 推薦影片
-youtube.com###related
-! 影片 miniplayer
-!youtube.com##.ytp-button.ytp-miniplayer-button
-! 影片 size
-youtube.com##.ytp-button.ytp-size-button
-!刪除 YouTube 的音量增加/減少動畫
-youtube.com##.html5-video-player > div > .ytp-bezel[aria-label$="volume"]
-!和/或片尾畫面/接下來自動播放
-/endscreen.js$script,xhr,important,domain=youtube.com
-! 影片結束時 結束卡片
-youtube.com##.videowall-endscreen
-youtube.com##.ytp-ce-element
-youtube.com##.ytp-ce-element-shadow
-! 影片縮圖 加入待播清單
-youtube.com##[aria-label="加入待播清單"]
-! logo旁的地區代號
-youtube.com###country-code
-!滑鼠懸停在 YouTube 影片上時消除影片中的白霧
-youtube.com##.ytp-gradient-bottom
-youtube.com##.ytp-gradient-top
-!移除 播放清單 推薦播放清單 推薦影片
-youtube.com##ytd-continuation-item-renderer.ytd-section-list-renderer.style-scope
-
-!移除 首頁上方 讓你耳目一新 多餘按鈕
-youtube.com##ytd-browse[page-subtype="home"] yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer.style-scope:not(:first-child,:last-child)
-!移除 頻道ICON上的直播標籤
-youtube.com##.yt-spec-avatar-shape__live-badge
-!移除 youtube 直播紅環
-youtube.com##.yt-spec-avatar-shape--live-ring::after
-!隱藏 YouTube 播放速度滑桿
-youtube.com##.ytp-menuitem-with-footer.ytp-menuitem
 !移除 進度條圓點
 youtube.com##.ytp-scrubber-container
 !付費促銷訊息連結
@@ -150,4 +67,4 @@ youtube.com##.ytSuggestionComponentVisualSuggestThumbnail
 youtube.com##ytd-rich-item-renderer[is-in-first-column]:style(margin-left: calc(var(--ytd-rich-grid-item-margin)/2) !important;)
 youtube.com##ytd-rich-grid-row, #contents.ytd-rich-grid-row:style(display:contents !important;)
 ! YouTube 主頁和訂閱（網格視圖）- 隱藏 Shorts 部分
-youtube.com##[is-shorts]
+youtube.com##ytd-browse[page-subtype="home"] [is-shorts]
