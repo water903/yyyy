@@ -138,7 +138,6 @@ youtube.com##:is(#metadata-line>span,.yt-content-metadata-view-model__metadata-r
 ! 暫停後推薦
 youtube-nocookie.com,youtube.com##.ytp-pause-overlay, .show-video-thumbnail-button
 ~youtube-nocookie.com,~youtube.com##iframe ~ #topvbar > #rvid
-
 !ghost renderer
 youtube.com###frosted-glass
 youtube.com##ytd-ghost-grid-renderer
@@ -154,4 +153,4 @@ youtube.com##ytd-rich-grid-row, #contents.ytd-rich-grid-row:style(display:conten
 ! YouTube 主頁和訂閱（網格視圖）- 隱藏 Shorts 部分
 youtube.com##ytd-browse[page-subtype="home"] [is-shorts]
 !移除YouTube 主頁影片懸停時出現彩色覆蓋
-youtube.com##yt-lockup-view-model yt-lockup-metadata-view-model :is(a.yt-lockup-metadata-view-model__title[style^="color:"], div.yt-lockup-metadata-view-model__metadata[style^="color:"]):style(color: inherit !important;)
+!
