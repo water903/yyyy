@@ -129,9 +129,12 @@ youtube.com##html[dark], [dark]:style(--yt-frosted-glass-desktop: rgba(15, 15, 1
 youtube.com##.yt-core-attributed-string--inline-block-mod > img:style(filter: brightness(100%) saturate(100%) hue-rotate(18deg) !important;)
 ! 移除重播聊天室
 youtube.com##.ytd-live-chat-frame.style-scope > yt-button-shape:has-text(/重播/)
-!隱藏僅限會員的視頻
-!youtube.com##ytd-rich-item-renderer.ytd-rich-grid-renderer:has(.badge-style-type-members-only)
+!隱藏僅限會員的影片
+youtube.com##ytd-rich-item-renderer.ytd-rich-grid-renderer:has(.badge-style-type-members-only)
 !youtube.com##:is(ytd-rich-item-renderer,ytd-compact-video-renderer,ytd-video-renderer,ytd-grid-video-renderer):has(.badge-style-type-members-only)
+!隱藏 直播VOD的影片
+youtube.com##:is(#metadata-line>span,.yt-content-metadata-view-model__metadata-row):last-of-type:has-text(直播):upward(ytd-rich-item-renderer,ytd-grid-video-renderer,ytd-compact-video-renderer,ytd-item-section-renderer,ytd-video-renderer)
+
 ! 暫停後推薦
 youtube-nocookie.com,youtube.com##.ytp-pause-overlay, .show-video-thumbnail-button
 ~youtube-nocookie.com,~youtube.com##iframe ~ #topvbar > #rvid
@@ -150,3 +153,5 @@ youtube.com##ytd-rich-item-renderer[is-in-first-column]:style(margin-left: calc(
 youtube.com##ytd-rich-grid-row, #contents.ytd-rich-grid-row:style(display:contents !important;)
 ! YouTube 主頁和訂閱（網格視圖）- 隱藏 Shorts 部分
 youtube.com##ytd-browse[page-subtype="home"] [is-shorts]
+!移除YouTube 主頁影片懸停時出現彩色覆蓋
+youtube.com##yt-lockup-view-model yt-lockup-metadata-view-model :is(a.yt-lockup-metadata-view-model__title[style^="color:"], div.yt-lockup-metadata-view-model__metadata[style^="color:"]):style(color: inherit !important;)
