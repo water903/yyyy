@@ -87,16 +87,18 @@ youtube.com##.ytp-scrubber-container
 !付費促銷訊息連結
 youtube.com##.YtmPaidContentOverlayHost 
 youtube.com##.ytp-paid-content-overlay-link
-
 ! 隱藏 通知我 按鈕
 youtube.com###buttons > .ytd-rich-grid-media.style-scope
-! YT -將巨大的搜尋縮圖恢復為正常縮圖
+
+! 搜尋縮圖恢復為正常縮圖
 youtube.com##ytd-two-column-search-results-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] #primary.ytd-two-column-search-results-renderer, ytd-search[has-search-header][has-bigger-thumbs] #header.ytd-search:style(max-width: 1096px !important)
 youtube.com##ytd-channel-renderer[use-bigger-thumbs][bigger-thumb-style=BIG] #avatar-section.ytd-channel-renderer, ytd-channel-renderer[use-bigger-thumbs] #avatar-section.ytd-channel-renderer:style(max-width: 360px !important)
 youtube.com##ytd-video-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-thumbnail.ytd-video-renderer, ytd-video-renderer[use-search-ui] ytd-thumbnail.ytd-video-rendererytd-playlist-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-playlist-thumbnail.ytd-playlist-renderer, ytd-playlist-renderer[use-bigger-thumbs] ytd-playlist-thumbnail.ytd-playlist-renderer:style(max-width: 360px !important)
 youtube.com##ytd-radio-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-thumbnail.ytd-radio-renderer, ytd-radio-renderer[use-bigger-thumbs] ytd-thumbnail.ytd-radio-renderer, ytd-radio-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-playlist-thumbnail.ytd-radio-renderer:style(max-width: 360px !important)
 youtube.com##ytd-movie-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] .thumbnail-container.ytd-movie-renderer, ytd-movie-renderer[use-bigger-thumbs] .thumbnail-container.ytd-movie-renderer:style(max-width: 360px !important)
 youtube.com##ytd-promoted-video-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-thumbnail.ytd-promoted-video-renderer, ytd-promoted-sparkles-web-renderer[web-search-layout][use-bigger-thumbs][bigger-thumbs-style=BIG] #thumbnail-container.ytd-promoted-sparkles-web-renderer, ytd-text-image-no-button-layout-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] #text-image-container.ytd-text-image-no-button-layout-renderer:style(max-width: 360px !important)
+! 搜尋縮圖恢復為正常縮圖 播放清單
+youtube.com##yt-lockup-view-model.ytd-item-section-renderer > .yt-lockup-view-model--horizontal > a.yt-lockup-view-model__content-image:style( width: 240px !important; )
 !隱藏 YT Search keep only videos (no shorts), channels and playlists
 !youtube.com##ytd-search #contents > * > div#dismissible h2:has-text(/^\s*(People also|探索更多內容)/):upward(#dismissible)
 youtube.com##ytd-search ytd-item-section-renderer>#contents>:is(:not(ytd-video-renderer,ytd-channel-renderer,ytd-playlist-renderer,yt-lockup-view-model,yt-showing-results-for-renderer,[icon-name="promo-full-height:EMPTY_SEARCH"]),ytd-video-renderer:has([aria-label="Shorts"]))
@@ -129,11 +131,13 @@ youtube.com##html[dark], [dark]:style(--yt-frosted-glass-desktop: rgba(15, 15, 1
 youtube.com##.yt-core-attributed-string--inline-block-mod > img:style(filter: brightness(100%) saturate(100%) hue-rotate(18deg) !important;)
 ! 移除重播聊天室
 youtube.com##.ytd-live-chat-frame.style-scope > yt-button-shape:has-text(/重播/)
-!隱藏僅限會員的影片
+!隱藏 僅限會員的影片
 youtube.com##ytd-rich-item-renderer.ytd-rich-grid-renderer:has(.badge-style-type-members-only)
 !youtube.com##:is(ytd-rich-item-renderer,ytd-compact-video-renderer,ytd-video-renderer,ytd-grid-video-renderer):has(.badge-style-type-members-only)
 !隱藏 直播VOD的影片
 youtube.com##:is(#metadata-line>span,.yt-content-metadata-view-model__metadata-row):last-of-type:has-text(直播):upward(ytd-rich-item-renderer,ytd-grid-video-renderer,ytd-compact-video-renderer,ytd-item-section-renderer,ytd-video-renderer)
+!隱藏 即將直播的影片
+youtube.com##ytd-rich-item-renderer:has-text(即將直播)
 
 ! 暫停後推薦
 youtube-nocookie.com,youtube.com##.ytp-pause-overlay, .show-video-thumbnail-button
@@ -152,5 +156,6 @@ youtube.com##ytd-rich-item-renderer[is-in-first-column]:style(margin-left: calc(
 youtube.com##ytd-rich-grid-row, #contents.ytd-rich-grid-row:style(display:contents !important;)
 ! YouTube 主頁和訂閱（網格視圖）- 隱藏 Shorts 部分
 youtube.com##ytd-browse[page-subtype="home"] [is-shorts]
+
 !移除YouTube 主頁影片懸停時出現彩色覆蓋
 !
