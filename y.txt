@@ -135,7 +135,7 @@ youtube.com##.ytd-live-chat-frame.style-scope > yt-button-shape:has-text(/重播
 youtube.com##ytd-rich-item-renderer.ytd-rich-grid-renderer:has(.badge-style-type-members-only)
 !youtube.com##:is(ytd-rich-item-renderer,ytd-compact-video-renderer,ytd-video-renderer,ytd-grid-video-renderer):has(.badge-style-type-members-only)
 !隱藏 直播VOD的影片
-youtube.com##:is(#metadata-line>span,.yt-content-metadata-view-model__metadata-row):last-of-type:has-text(直播):upward(ytd-rich-item-renderer,ytd-grid-video-renderer,ytd-compact-video-renderer,ytd-item-section-renderer,ytd-video-renderer)
+youtube.com##ytd-browse:is([page-subtype="home"], [page-subtype="subscriptions"]) :is(#metadata-line>span,.yt-content-metadata-view-model__metadata-row):last-of-type:has-text(直播):upward(ytd-rich-item-renderer,ytd-grid-video-renderer,ytd-compact-video-renderer,ytd-item-section-renderer,ytd-video-renderer)
 !隱藏 即將直播的影片
 youtube.com##ytd-rich-item-renderer:has-text(即將直播)
 
@@ -158,4 +158,3 @@ youtube.com##ytd-rich-grid-row, #contents.ytd-rich-grid-row:style(display:conten
 youtube.com##ytd-browse[page-subtype="home"] [is-shorts]
 
 !移除YouTube 主頁影片懸停時出現彩色覆蓋
-!
