@@ -22,8 +22,12 @@ youtube.com##ytd-browse[page-subtype="subscriptions"] #contents.ytd-rich-grid-re
 youtube.com##.style-default.ytd-masthead.style-scope
 youtube.com###voice-search-button
 youtube.com###buttons > ytd-button-renderer.ytd-masthead
-! 首頁右方多餘按鈕
-
+! 首頁右方側邊欄多餘按鈕
+youtube.com###section-items > ytd-guide-entry-renderer.ytd-guide-collapsible-section-entry-renderer.style-scope:not(:nth-child(4))
+youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:is(:nth-of-type(3),:nth-of-type(4))
+youtube.com##.ytd-guide-entry-renderer.style-scope.yt-simple-endpoint:has-text(/首頁/)
+youtube.com##.ytd-guide-downloads-entry-renderer
+youtube.com##ytd-mini-guide-entry-renderer.ytd-mini-guide-renderer.style-scope:nth-of-type(5)
 youtube.com###footer
 
 ! YT Home - Hide Mixes
@@ -54,7 +58,7 @@ youtube.com###related
 ! 影片 size
 youtube.com##.ytp-button.ytp-size-button
 !刪除 YouTube 的音量增加/減少動畫
-youtube.com##.html5-video-player > div > .ytp-bezel[aria-label$="volume"]
+youtube.com##.html5-video-player > [aria-label$="volume"]
 !和/或片尾畫面/接下來自動播放
 /endscreen.js$script,xhr,important,domain=youtube.com
 ! 影片結束時 結束卡片
