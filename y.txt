@@ -58,12 +58,12 @@ youtube.com###related
 ! 影片 size
 youtube.com##.ytp-button.ytp-size-button
 !刪除 YouTube 的音量增加/減少動畫
-youtube.com##.html5-video-player > [aria-label$="volume"]
+!youtube.com##.html5-video-player > [aria-label$="volume"]
 !和/或片尾畫面/接下來自動播放
 /endscreen.js$script,xhr,important,domain=youtube.com
 ! 影片結束時 結束卡片
 youtube.com##.html5-video-player.ended-mode .ytp-fullscreen-grid
-
+youtube.com##[class*="ytp-ce-element"]
 ! 影片縮圖 加入待播清單
 youtube.com##[aria-label="加入待播清單"]
 ! logo旁的地區代號
