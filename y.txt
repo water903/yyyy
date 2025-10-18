@@ -5,6 +5,8 @@
 ! >>>>>Youtube Music<<<<<
 !Youtube Music only audio
 music.youtube.com##+js(trusted-replace-xhr-response, "audioConfig":{, '"audioConfig":{"playAudioOnly":true,', /player?)
+! remove pink fade from youtube music playback progress bar
+music.youtube.com###primaryProgress.tp-yt-paper-progress:style(background: #FF0000 !important)
 
 ! >>>>>Youtube<<<<<
 !首頁 - 縮圖進度色調
@@ -21,12 +23,7 @@ youtube.com##.style-default.ytd-masthead.style-scope
 youtube.com###voice-search-button
 youtube.com###buttons > ytd-button-renderer.ytd-masthead
 ! 首頁右方多餘按鈕
-youtube.com###section-items > ytd-guide-entry-renderer.ytd-guide-collapsible-section-entry-renderer.style-scope:not(:nth-child(4))
-youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(3)
-youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(4)
-youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope > .ytd-guide-entry-renderer.style-scope.yt-simple-endpoint:has-text(/Explore|首頁/)
-youtube.com###downloads-entry > .ytd-guide-entry-renderer.style-scope.yt-simple-endpoint
-youtube.com##ytd-mini-guide-entry-renderer.ytd-mini-guide-renderer.style-scope:nth-of-type(5)
+
 youtube.com###footer
 
 ! YT Home - Hide Mixes
@@ -61,9 +58,8 @@ youtube.com##.html5-video-player > div > .ytp-bezel[aria-label$="volume"]
 !和/或片尾畫面/接下來自動播放
 /endscreen.js$script,xhr,important,domain=youtube.com
 ! 影片結束時 結束卡片
-youtube.com##.videowall-endscreen
-youtube.com##.ytp-ce-element
-youtube.com##.ytp-ce-element-shadow
+youtube.com##.html5-video-player.ended-mode .ytp-fullscreen-grid
+
 ! 影片縮圖 加入待播清單
 youtube.com##[aria-label="加入待播清單"]
 ! logo旁的地區代號
@@ -133,7 +129,6 @@ youtube.com##.yt-core-attributed-string--inline-block-mod > img:style(filter: br
 youtube.com##.ytd-live-chat-frame.style-scope > yt-button-shape:has-text(/重播/)
 !隱藏 僅限會員的影片
 youtube.com##ytd-rich-item-renderer.ytd-rich-grid-renderer:has(.badge-style-type-members-only)
-!youtube.com##:is(ytd-rich-item-renderer,ytd-compact-video-renderer,ytd-video-renderer,ytd-grid-video-renderer):has(.badge-style-type-members-only)
 !隱藏 直播VOD的影片
 youtube.com##ytd-browse:is([page-subtype="home"], [page-subtype="subscriptions"]) :is(#metadata-line>span,.yt-content-metadata-view-model__metadata-row):last-of-type:has-text(直播):upward(ytd-rich-item-renderer,ytd-grid-video-renderer,ytd-compact-video-renderer,ytd-item-section-renderer,ytd-video-renderer)
 !隱藏 即將直播的影片
@@ -156,5 +151,9 @@ youtube.com##ytd-rich-item-renderer[is-in-first-column]:style(margin-left: calc(
 youtube.com##ytd-rich-grid-row, #contents.ytd-rich-grid-row:style(display:contents !important;)
 ! YouTube 主頁和訂閱（網格視圖）- 隱藏 Shorts 部分
 youtube.com##ytd-browse[page-subtype="home"] [is-shorts]
+
+!removing the colors of youtube description box
+youtube.com##+js(ra, enable-color-sampling, ytd-watch-metadata[enable-color-sampling], stay)
+youtube.com##+js(aeld, /^mouse(enter|leave)$/, , elements, #description)
 
 !移除YouTube 主頁影片懸停時出現彩色覆蓋
