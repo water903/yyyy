@@ -51,6 +51,24 @@ youtube.com##ytd-menu-service-item-renderer.ytd-menu-popup-renderer.style-scope 
 youtube.com##ytd-menu-service-item-download-renderer.ytd-menu-popup-renderer
 !在影片品質選單中隱藏“1080p Premium”
 youtube.com##.ytp-quality-menu .ytp-menuitem:has(.ytp-premium-label)
+! 影片播放列按鈕
+youtube.com##.ytp-button.ytp-prev-button
+youtube.com##.ytp-playlist-ui.ytp-button.ytp-next-button
+youtube.com##.ytp-button.ytp-fullscreen-button
+
+! 首頁 popupmenu "加入待播清單|下載|隱藏"
+youtube.com##yt-list-item-view-model.yt-list-item-view-model:has-text(/加入待播清單|下載|隱藏/)
+! watch later popupmenu "移除看過的影片"
+youtube.com##ytd-menu-navigation-item-renderer.ytd-menu-popup-renderer.style-scope:has-text(/移除看過的影片/)
+! playlist popupmenu "隨機撥放"
+youtube.com##yt-list-item-view-model.yt-list-item-view-model:has-text(/隨機撥放/)
+
+!刪除 YouTube 播放器中間出現的「暫停/播放」 螢幕快轉
+youtube.com##.html5-video-player .ytp-bezel
+youtube.com##.ytp-seek-overlay
+!刪除 YouTube 播放器右上出現的 playlist-menu button
+youtube.com##.ytp-button.ytp-playlist-menu-button
+
 ! 影片 推薦影片
 youtube.com###related
 ! 影片 miniplayer
@@ -101,7 +119,7 @@ youtube.com##ytd-promoted-video-renderer[use-bigger-thumbs][bigger-thumbs-style=
 youtube.com##yt-lockup-view-model.ytd-item-section-renderer > .yt-lockup-view-model--horizontal > a.yt-lockup-view-model__content-image:style( width: 240px !important; )
 !隱藏 YT Search keep only videos (no shorts), channels and playlists
 !youtube.com##ytd-search #contents > * > div#dismissible h2:has-text(/^\s*(People also|探索更多內容)/):upward(#dismissible)
-youtube.com##ytd-search ytd-item-section-renderer>#contents>:is(:not(ytd-video-renderer,ytd-channel-renderer,ytd-playlist-renderer,yt-lockup-view-model,yt-showing-results-for-renderer,[icon-name="promo-full-height:EMPTY_SEARCH"]),ytd-video-renderer:has([aria-label="Shorts"]))
+youtube.com##ytd-search ytd-item-section-renderer>#contents>:is(:not(ytd-video-renderer,ytd-channel-renderer,ytd-playlist-renderer,yt-lockup-view-model,yt-showing-results-for-renderer,[icon-name="promo-full-height:EMPTY_SEARCH"]))
 
 ! 頻道頁面 空白部分
 youtube.com##ytd-browse[page-subtype="channels"] ytd-two-column-browse-results-renderer:style(max-width: unset !important; width: 95% !important;)
@@ -120,14 +138,8 @@ youtube.com##yt-reaction-control-panel-view-model
 youtube.com##yt-reaction-control-panel-overlay-view-model
 ! 移除 pop ad
 youtube.com##ytd-popup-container > tp-yt-paper-dialog > ytd-mealbar-promo-renderer, ytd-popup-container > tp-yt-paper-dialog > yt-mealbar-promo-renderer:has-text(/YouTube TV|成為這個頻道的會員/)
-! change color of youtube playback head dot
-youtube.com##html[refresh], [refresh]:style(--yt-spec-static-brand-red: #FF0000 !important; --yt-spec-static-overlay-background-brand: rgba(255, 0, 0, 0.9) !important;)
-! change color of youtube notification badge and font color
-youtube.com##.yt-spec-icon-badge-shape__badge:style(background: #CC0000 !important; color: #FFF !important;)
-! remove background transparency from youtube title bar & change color of player settings icon
-youtube.com##html, [light]:style(--yt-frosted-glass-desktop: rgba(255, 255, 255, 1.0) !important; --yt-spec-red-indicator: #FF0000 !important;)
-youtube.com##html[dark], [dark]:style(--yt-frosted-glass-desktop: rgba(15, 15, 15, 1.0) !important; --yt-spec-red-indicator: #FF0000 !important;)
-! change color of youtube link preview icon in video description更改影片描述中 YouTube 連結預覽圖示的顏色
+
+! 移除 YouTube 觀看進度100%的影片
 youtube.com##.yt-core-attributed-string--inline-block-mod > img:style(filter: brightness(100%) saturate(100%) hue-rotate(18deg) !important;)
 ! 移除重播聊天室
 youtube.com##.ytd-live-chat-frame.style-scope > yt-button-shape:has-text(/重播/)
