@@ -139,8 +139,7 @@ youtube.com##yt-reaction-control-panel-overlay-view-model
 ! 移除 pop ad
 youtube.com##ytd-popup-container > tp-yt-paper-dialog > ytd-mealbar-promo-renderer, ytd-popup-container > tp-yt-paper-dialog > yt-mealbar-promo-renderer:has-text(/YouTube TV|成為這個頻道的會員/)
 
-! 移除 YouTube 觀看進度100%的影片
-youtube.com##.yt-core-attributed-string--inline-block-mod > img:style(filter: brightness(100%) saturate(100%) hue-rotate(18deg) !important;)
+
 ! 移除重播聊天室
 youtube.com##.ytd-live-chat-frame.style-scope > yt-button-shape:has-text(/重播/)
 !隱藏 僅限會員的影片
