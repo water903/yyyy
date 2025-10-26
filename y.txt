@@ -6,15 +6,15 @@
 !Youtube Music only audio
 music.youtube.com##+js(trusted-replace-xhr-response, "audioConfig":{, '"audioConfig":{"playAudioOnly":true,', /player?)
 ! remove pink fade from youtube music playback progress bar
-music.youtube.com###primaryProgress.tp-yt-paper-progress:style(background: #FF0000 !important)
+music.youtube.com###primaryProgress.tp-yt-paper-progress:style(background:red!important)
 
 ! >>>>>Youtube<<<<<
 !首頁 - 縮圖進度色調
-youtube.com###progress.ytd-thumbnail-overlay-resume-playback-renderer:style(background: #F00 !important;)
+youtube.com##.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment:style(background:red!important;)
 !進度欄在網站上方刷新
-youtube.com###progress.yt-page-navigation-progress:style(background: #F00 !important;)
+youtube.com###progress.yt-page-navigation-progress:style(background:red!important;)
 !阻止播放器上的粉紅色進度條
-youtube.com##.ytp-play-progress:style(background: #F00 !important;)
+youtube.com##.ytp-play-progress:style(background:red!important;)
 ! Homepage - distractions (non-videos) | temporary fix: remove gaps + ghost renderer
 youtube.com##ytd-browse[page-subtype="home"] #contents.ytd-rich-grid-renderer > :not(ytd-rich-item-renderer,ytd-continuation-item-renderer)
 youtube.com##ytd-browse[page-subtype="subscriptions"] #contents.ytd-rich-grid-renderer > :not(ytd-rich-item-renderer,ytd-continuation-item-renderer)
