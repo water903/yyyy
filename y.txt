@@ -40,7 +40,7 @@ youtube.com##ytd-rich-item-renderer:has(div.ytThumbnailOverlayProgressBarHostWat
 !youtube.com##ytd-rich-item-renderer:has(#progress[style^="width: 100%"])
 
 ! 影片下方多餘按鈕
-!youtube.com###actions :is([aria-label="Share"],[aria-label="剪輯片段"],[aria-label="超級感謝"],[aria-label="Save to playlist"],[aria-label="More actions"]), #social-links :is([aria-label="Videos"],[aria-label="About"])
+youtube.com###actions :is([aria-label="Share"],[aria-label="剪輯片段"],[aria-label="超級感謝"],[aria-label="Save to playlist"],[aria-label="More actions"]), #social-links :is([aria-label="Videos"],[aria-label="About"])
 !youtube.com##yt-list-item-view-model.yt-list-item-view-model:nth-of-type(1)
 !youtube.com###flexible-item-buttons
 !影片下方更多清單 多餘按鈕
