@@ -151,14 +151,14 @@ youtube.com##ytd-rich-item-renderer:has-text(即將直播)
 
 ! 暫停後推薦
 youtube-nocookie.com,youtube.com##.ytp-pause-overlay, .show-video-thumbnail-button
-~youtube-nocookie.com,~youtube.com##iframe ~ #topvbar > #rvid
+youtube-nocookie.com,youtube.com##iframe ~ #topvbar > #rvid
 !ghost renderer
 youtube.com###frosted-glass
 youtube.com##ytd-ghost-grid-renderer
 !playlist背板顏色移除
 youtube.com##ytd-browse[page-subtype="playlist"] .ytCinematicContainerViewModelHost
 !標題字體大小
-youtube.com##ytd-rich-grid-media #video-title:style(font-size: 20px !important;)
+!youtube.com##ytd-rich-grid-media #video-title:style(font-size: 20px !important;)
 !搜尋建議下拉選單 刪除縮圖
 youtube.com##.ytSuggestionComponentVisualSuggestThumbnail
 !解決 YouTube 主頁網格間隙問題
@@ -172,3 +172,8 @@ youtube.com##+js(ra, enable-color-sampling, ytd-watch-metadata[enable-color-samp
 youtube.com##+js(aeld, /^mouse(enter|leave)$/, , elements, #description)
 
 !移除YouTube 主頁影片懸停時出現彩色覆蓋
+youtube.com##.yt-spec-touch-feedback-shape__hover-effect
+youtube.com##html[dark] yt-lockup-metadata-view-model .yt-lockup-metadata-view-model__metadata[style^="color:"]:style( color: #aaa !important; )
+youtube.com##html[dark] yt-lockup-metadata-view-model .yt-lockup-metadata-view-model__title[style^="color:"]:style( color: #f1f1f1 !important; )
+youtube.com##html:not([dark]) yt-lockup-metadata-view-model .yt-lockup-metadata-view-model__metadata[style^="color:"]:style( color: #606060 !important; )
+youtube.com##html:not([dark]) yt-lockup-metadata-view-model .yt-lockup-metadata-view-model__title[style^="color:"]:style( color: #0f0f0f !important; )
