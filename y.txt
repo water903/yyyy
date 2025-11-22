@@ -35,13 +35,12 @@ youtube.com##ytd-mini-guide-entry-renderer.ytd-mini-guide-renderer.style-scope:n
 youtube.com###footer
 !首頁 問卷調查
 youtube.com##ytd-inline-survey-renderer
-
 ! YT Home - Hide Mixes
 youtube.com##ytd-rich-item-renderer:has([href*="start_radio=1"])
 ! Hide fully watched videos on homepage
-youtube.com##ytd-rich-item-renderer:has(div.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment[style^="width: 100%"])
+youtube.com##ytd-browse[page-subtype="home"] ytd-rich-item-renderer:has(div.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment[style^="width: 100%"])
 ! Hide fully watched videos on sidebar
-!youtube.com##yt-lockup-view-model:has(div.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment[style^="width: 100%"])
+!youtube.com##ytd-browse[page-subtype="subscriptions"] yt-lockup-view-model:has(div.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment[style^="width: 100%"])
 ! Hide fully watched videos in a channel
 !youtube.com##ytd-rich-item-renderer:has(#progress[style^="width: 100%"])
 
