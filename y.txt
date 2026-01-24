@@ -169,8 +169,8 @@ youtube.com##.ytSuggestionComponentVisualSuggestThumbnail
 youtube.com##ytd-browse:is([page-subtype="home"], [page-subtype="subscriptions"]) [is-shorts]
 
 !removing the colors of youtube description box
-youtube.com##+js(ra, enable-color-sampling, ytd-watch-metadata[enable-color-sampling], stay)
-youtube.com##+js(aeld, /^mouse(enter|leave)$/, , elements, #description)
+youtube.com##ytd-watch-metadata[description-collapsed]:style( --yt-saturated-base-background: unset !important; --yt-saturated-raised-background: unset !important; --yt-saturated-additive-background: unset !important; --yt-saturated-text-primary: unset !important; --yt-saturated-text-secondary: unset !important; --yt-saturated-outline:  unset !important; --yt-saturated-key-light:  unset !important; --yt-saturated-collection-stack:  unset !important; --yt-saturated-inverted-background: unset !important; --yt-saturated-text-primary-inverse:  unset !important; --yt-saturated-text-disabled: unset !important; --yt-saturated-drop-shadow: unset !important; --yt-saturated-card-outline: unset !important; --yt-saturated-overlay-background: unset !important; --yt-saturated-overlay-text-primary: unset !important; )
+youtube.com##ytd-watch-metadata[description-collapsed] [style*="color:"] { color: unset !important; }
 
 !移除YouTube 主頁影片懸停時出現彩色覆蓋
 youtube.com##.yt-spec-touch-feedback-shape__hover-effect
