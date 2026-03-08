@@ -33,8 +33,12 @@ youtube.com##.ytd-guide-downloads-entry-renderer
 youtube.com##ytd-guide-collapsible-entry-renderer.ytd-guide-collapsible-section-entry-renderer.style-scope > .ytd-guide-collapsible-entry-renderer.style-scope
 youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:is(:nth-of-type(3),:nth-of-type(4))
 youtube.com###footer
-!首頁 問卷調查
+
+! YT - 隱藏線上調查(彈出式調查)
+youtube.com##ytd-single-option-survey-renderer
+! YT - 隱藏線上調查(首頁影片之間)
 youtube.com##ytd-inline-survey-renderer
+
 ! YT Home - Hide Mixes
 youtube.com##ytd-rich-item-renderer:has([href*="start_radio=1"])
 ! Hide fully watched videos on homepage
@@ -75,6 +79,14 @@ youtube.com##.ytp-seek-overlay
 youtube.com##.ytp-button.ytp-playlist-menu-button
 !刪除 YouTube 的音量增加/減少動畫
 !youtube.com##.html5-video-player > [aria-label$="volume"]
+
+! YT Player - Hide the "Loading" Spinner
+youtube.com##.ytp-spinner
+! YT Player - Block Youtube AI-Generated summary
+youtube.com###expandable-metadata
+! YT Player - Settings - Hide Stable Volume, Ambient mode, Annotations, and Sleep timer
+youtube.com##.ytp-settings-menu .ytp-menuitem:has([d^="M7 13H5v-2h2v2zm3-4H8v6h2V9zm3"],[d^="M21 7v10H3V7h18m1-1H2v12h20V6zM11"],[d^="M17.5,7c1.93,0,3.5,1.57,3.5,3.5c0"],[d^="M16.67,4.31C19.3,5.92,21,8.83"])
+
 
 ! 影片 推薦影片
 youtube.com###related
@@ -142,7 +154,7 @@ youtube.com##:is(.smartimation__content,.animated-action__content-with-backgroun
 youtube.com##yt-reaction-control-panel-view-model
 youtube.com##yt-reaction-control-panel-overlay-view-model
 ! 移除 pop ad
-youtube.com##ytd-popup-container > tp-yt-paper-dialog > ytd-mealbar-promo-renderer, ytd-popup-container > tp-yt-paper-dialog > yt-mealbar-promo-renderer:has-text(/YouTube TV|成為這個頻道的會員/)
+!youtube.com##ytd-popup-container > tp-yt-paper-dialog > ytd-mealbar-promo-renderer, ytd-popup-container > tp-yt-paper-dialog > yt-mealbar-promo-renderer:has-text(/YouTube TV|成為這個頻道的會員/)
 
 ! 移除重播聊天室
 youtube.com##.ytd-live-chat-frame.style-scope > yt-button-shape:has-text(/重播/)
@@ -156,6 +168,9 @@ youtube.com##ytd-rich-item-renderer:has-text(即將直播)
 ! 暫停後推薦
 youtube-nocookie.com,youtube.com##.ytp-pause-overlay, .show-video-thumbnail-button
 youtube-nocookie.com,youtube.com##iframe ~ #topvbar > #rvid
+!去除 YouTube 嵌入影片滑鼠懸停時的黑色透明背景
+youtube-nocookie.com,youtube.com##.html5-video-player :is(.ytp-gradient-top,.ytp-gradient-bottom)
+
 !ghost renderer
 youtube.com###frosted-glass
 youtube.com##ytd-ghost-grid-renderer
