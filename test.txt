@@ -4,7 +4,7 @@
 
 ! >>>>>Youtube Music<<<<<
 !Youtube Music only audio
-music.youtube.com##+js(trusted-replace-xhr-response, "audioConfig":{, '"audioConfig":{"playAudioOnly":true,', /player?)
+music.youtube.com##+js(trusted-replace-xhr-response, /"audioConfig":\{/g, '"audioConfig":{"playAudioOnly":true,', /player/)
 ! remove pink fade from youtube music playback progress bar
 music.youtube.com###primaryProgress.tp-yt-paper-progress:style(background:red!important)
 
