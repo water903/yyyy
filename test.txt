@@ -62,7 +62,7 @@ youtube.com##ytd-menu-service-item-download-renderer.ytd-menu-popup-renderer
 youtube.com##.ytp-quality-menu .ytp-menuitem:has(.ytp-premium-label)
 ! 影片播放列按鈕
 youtube.com##.ytp-button.ytp-prev-button
-youtube.com##.ytp-playlist-ui.ytp-button.ytp-next-button
+youtube.com##.ytp-autonav-toggle-button-container
 youtube.com##.ytp-button.ytp-fullscreen-button
 
 ! 首頁 popupmenu "加入待播清單|下載|隱藏"
