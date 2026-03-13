@@ -108,7 +108,6 @@ youtube.com##.ytp-gradient-bottom
 youtube.com##.ytp-gradient-top
 !移除 播放清單 推薦播放清單 推薦影片
 youtube.com##ytd-continuation-item-renderer.ytd-section-list-renderer.style-scope
-
 !移除 首頁上方 讓你耳目一新 多餘按鈕
 youtube.com##ytd-browse[page-subtype="home"] yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer.style-scope:not(:first-child,:last-child)
 !移除 頻道ICON上的直播標籤
@@ -177,7 +176,7 @@ youtube.com##ytd-ghost-grid-renderer
 !playlist背板顏色移除
 youtube.com##ytd-browse[page-subtype="playlist"] .ytCinematicContainerViewModelHost
 !playlist背板微光移除
-.ytThumbnailViewModelBlurredImage .ytCoreImageLoaded
+youtube.com##.ytThumbnailViewModelBlurredImage .ytCoreImageLoaded
 !標題字體大小
 !youtube.com##ytd-rich-grid-media #video-title:style(font-size: 20px !important;)
 !搜尋建議下拉選單 刪除縮圖
