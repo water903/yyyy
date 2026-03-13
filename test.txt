@@ -176,6 +176,8 @@ youtube.com###frosted-glass
 youtube.com##ytd-ghost-grid-renderer
 !playlist背板顏色移除
 youtube.com##ytd-browse[page-subtype="playlist"] .ytCinematicContainerViewModelHost
+!playlist背板微光移除
+.ytThumbnailViewModelBlurredImage .ytCoreImageLoaded
 !標題字體大小
 !youtube.com##ytd-rich-grid-media #video-title:style(font-size: 20px !important;)
 !搜尋建議下拉選單 刪除縮圖
