@@ -174,7 +174,7 @@ youtube-nocookie.com,youtube.com##.html5-video-player :is(.ytp-gradient-top,.ytp
 youtube.com###frosted-glass
 youtube.com##ytd-ghost-grid-renderer
 !playlist背板顏色移除
-youtube.com##ytd-browse[page-subtype="playlist"] .ytCinematicContainerViewModelHost
+youtube.com##ytd-browse[page-subtype="playlist"] .ytd-playlist-header-renderer.style-scope.immersive-header-background-wrapper
 !playlist背板微光移除
 youtube.com##.ytThumbnailViewModelBlurredImage .ytCoreImageLoaded
 !標題字體大小
