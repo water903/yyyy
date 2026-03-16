@@ -56,7 +56,7 @@ youtube.com###actions :is([aria-label="Share"],[aria-label="剪輯片段"],[aria
 youtube.com##.ytd-download-button-renderer
 youtube.com##ytd-menu-service-item-renderer.ytd-menu-popup-renderer.style-scope > .ytd-menu-service-item-renderer.style-scope:has-text(/加入待播清單|檢舉|剪輯片段|超級感謝/)
 ! 影片播放列 多餘按鈕
-youtube.com##.ytp-button.ytp-prev-button,.ytp-button.ytp-autonav-toggle,.ytp-button.ytp-fullscreen-button,.ytp-button.ytp-pip-button,.ytp-button.ytp-next-button
+youtube.com##.ytp-button.ytp-prev-button,.ytp-button.ytp-autonav-toggle,.ytp-button.ytp-fullscreen-button,.ytp-button.ytp-pip-button,.ytp-button.ytp-next-button,.ytp-button.ytp-size-button
 
 ! 影片選項 移除 加入待播清單和下載
 !youtube.com##ytd-menu-service-item-download-renderer.ytd-menu-popup-renderer
