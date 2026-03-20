@@ -53,8 +53,9 @@ youtube.com###actions :is([aria-label="Share"],[aria-label="剪輯片段"],[aria
 !youtube.com##yt-list-item-view-model.yt-list-item-view-model:nth-of-type(1)
 !youtube.com###flexible-item-buttons
 !影片下方更多清單 多餘按鈕
-youtube.com##.ytd-download-button-renderer
-youtube.com##ytd-menu-service-item-renderer.ytd-menu-popup-renderer.style-scope > .ytd-menu-service-item-renderer.style-scope:has-text(/加入待播清單|檢舉|剪輯片段|超級感謝/)
+youtube.com##ytd-menu-service-item-download-renderer.ytd-menu-popup-renderer.style-scope
+! 影片選項 移除 加入待播清單和下載
+youtube.com##ytd-menu-service-item-renderer.ytd-menu-popup-renderer.style-scope > .ytd-menu-service-item-renderer.style-scope:has-text(/加入待播清單|檢舉|剪輯片段|超級感謝|/)
 ! 影片播放列 多餘按鈕
 youtube.com##.ytp-button.ytp-prev-button,.ytp-button.ytp-autonav-toggle,.ytp-button.ytp-fullscreen-button,.ytp-button.ytp-pip-button,.ytp-button.ytp-next-button,.ytp-button.ytp-size-button
 
@@ -117,22 +118,10 @@ youtube.com##.ytp-paid-content-overlay-link
 !隱藏 通知我 按鈕
 youtube.com###buttons > .ytd-rich-grid-media.style-scope
 
-! 搜尋縮圖恢復為正常縮圖
-youtube.com##ytd-two-column-search-results-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] #primary.ytd-two-column-search-results-renderer, ytd-search[has-search-header][has-bigger-thumbs] #header.ytd-search:style(max-width: 1096px !important)
-youtube.com##ytd-channel-renderer[use-bigger-thumbs][bigger-thumb-style=BIG] #avatar-section.ytd-channel-renderer, ytd-channel-renderer[use-bigger-thumbs] #avatar-section.ytd-channel-renderer:style(max-width: 360px !important)
-youtube.com##ytd-video-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-thumbnail.ytd-video-renderer, ytd-video-renderer[use-search-ui] ytd-thumbnail.ytd-video-rendererytd-playlist-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-playlist-thumbnail.ytd-playlist-renderer, ytd-playlist-renderer[use-bigger-thumbs] ytd-playlist-thumbnail.ytd-playlist-renderer:style(max-width: 360px !important)
-youtube.com##ytd-radio-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-thumbnail.ytd-radio-renderer, ytd-radio-renderer[use-bigger-thumbs] ytd-thumbnail.ytd-radio-renderer, ytd-radio-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-playlist-thumbnail.ytd-radio-renderer:style(max-width: 360px !important)
-youtube.com##ytd-movie-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] .thumbnail-container.ytd-movie-renderer, ytd-movie-renderer[use-bigger-thumbs] .thumbnail-container.ytd-movie-renderer:style(max-width: 360px !important)
-youtube.com##ytd-promoted-video-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-thumbnail.ytd-promoted-video-renderer, ytd-promoted-sparkles-web-renderer[web-search-layout][use-bigger-thumbs][bigger-thumbs-style=BIG] #thumbnail-container.ytd-promoted-sparkles-web-renderer, ytd-text-image-no-button-layout-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] #text-image-container.ytd-text-image-no-button-layout-renderer:style(max-width: 360px !important)
-! 搜尋縮圖恢復為正常縮圖 播放清單
-youtube.com##yt-lockup-view-model.ytd-item-section-renderer > .yt-lockup-view-model--horizontal > a.yt-lockup-view-model__content-image:style( width: 240px !important; )
 !隱藏 YT Search keep only videos (no shorts), channels and playlists
 !youtube.com##ytd-search #contents > * > div#dismissible h2:has-text(/^\s*(People also|探索更多內容)/):upward(#dismissible)
 youtube.com##ytd-search ytd-item-section-renderer>#contents>:is(:not(ytd-video-renderer,ytd-channel-renderer,ytd-playlist-renderer,yt-lockup-view-model,yt-showing-results-for-renderer,[icon-name="promo-full-height:EMPTY_SEARCH"]))
 
-! 頻道頁面 空白部分
-youtube.com##ytd-browse[page-subtype="channels"] ytd-two-column-browse-results-renderer:style(max-width: unset !important; width: 95% !important;)
-youtube.com##ytd-browse[page-subtype="channels"] #page-header-container > *:style(padding: 0 2.5% !important;)
 !資訊面板中的主題上下文
 youtube.com,youtube-nocookie.com##.ytp-info-panel-preview
 ! 隱藏 播放清單 推薦影片
@@ -161,9 +150,6 @@ youtube-nocookie.com,youtube.com##iframe ~ #topvbar > #rvid
 !去除 YouTube 嵌入影片滑鼠懸停時的黑色透明背景
 youtube-nocookie.com,youtube.com##.html5-video-player :is(.ytp-gradient-top,.ytp-gradient-bottom)
 
-!ghost renderer
-youtube.com###frosted-glass
-youtube.com##ytd-ghost-grid-renderer
 !playlist背板顏色移除
 youtube.com##.yt-page-header-view-model__page-header-background > .ytCinematicContainerViewModelHost
 youtube.com##ytd-browse[page-subtype="playlist"] .ytd-playlist-header-renderer.style-scope.immersive-header-background-wrapper
