@@ -1,0 +1,328 @@
+@-moz-document domain("youtube.com") {
+/*YouTube True Black OLED*/
+/* 背景顏色調整為純黑 */
+    html[dark], [dark] {
+        --yt-spec-base-background: #000000 !important;
+        --yt-spec-raised-background: #000000 !important;
+        --yt-spec-menu-background: #0a0a0b  !important;
+        --yt-spec-static-overlay-background-solid: #000000 !important;
+        --yt-spec-brand-background-solid: #000000 !important;
+        --yt-spec-general-background-a: #000000 !important;
+        --yt-spec-general-background-b: #000000 !important;
+        --yt-spec-general-background-c: #000000 !important;
+        --yt-spec-error-background: #000000 !important;
+        --yt-main-app-background: #000000 !important;
+        --yt-main-app-background-tmp: #000000 !important;
+        --yt-guide-background: #000000 !important;
+        --yt-dialog-background: #000000 !important;
+        --yt-searchbox-background: #000000 !important;
+    }
+    /* 調整左側邊欄與上方導覽列 */
+    ytd-watch-flexy[is-two-columns_], 
+    #contentContainer.ytd-app,
+    ytd-masthead {
+        background-color: #000000 !important;
+    }
+
+    /* 影片下方的詳細資訊欄位 */
+    #primary-inner, #secondary-inner,
+    #panels.ytd-watch-flexy {
+        background-color: #0000 !important;
+    }
+    /*首頁popup*/
+  yt-list-item-view-model.yt-list-item-view-model{
+        background-color: #0a0a0b !important;
+    }
+
+}
+
+@-moz-document domain("youtube.com") {
+/*介面*/
+/*影片*/
+/*YouTube 暫時隱藏進度條(滑鼠移入才會顯示*/
+.ytp-chrome-bottom { opacity: 0; }
+.ytp-chrome-bottom:hover { opacity: 1; transition: opacity 0.3s ease !important;}
+/*隱藏 影片底部漸層圖層*/
+.ytp-gradient-bottom { display: none!important }
+/*加入 進度條背景*/
+.ytp-chrome-bottom{ background-color: rgba(0, 0, 0, .3) }
+/*隱藏 加入播放清單時背後陰影*/
+/*.opened { display: none!important }*/
+/* "將影片儲存至"背後陰影*/
+/*.opened { background: #00000080!important}
+/*影片背景*/
+.html5-main-video.video-stream { background: #0000!important}
+/*文字*/
+/*a { color: #cecece!important }/*cecece*/
+/*a:hover { color: #1c62b9!important; border: 0px !important; }*/
+/*頻道會員加入鈕 暫時隱藏 */
+#sponsor-button{opacity:0;}
+#sponsor-button:hover{opacity:1;}
+
+
+/*直播標籤 首播強調*/
+[aria-label="首播"]{background: #0010ff!important}
+/*直播標籤 直播強調*/
+[aria-label="直播"]{background: red!important;}
+.yt-badge-shape--thumbnail-live{background: #f009!important;}
+[class*="即將直播"]{background: #0b0000!important;}
+
+/*直播標籤 圖示*/
+.yt-badge-shape--thumbnail-badge.yt-badge-shape--thumbnail-live.yt-badge-shape > .yt-badge-shape__icon{ display: none!important }
+/*! 影片 隱藏 我的留言*/
+#simple-box { display: none!important }
+/* 影片 隱藏 聊天重播*/
+#teaser-carousel{display:none!important}
+/*影片進度列上觀看次數最多*/
+/*.ytp-heat-map-container{bac: hwb(0 6% 13% / .5)!important}*/
+/*影片 標體放大*/
+h1.ytd-watch-metadata.style-scope > .ytd-watch-metadata.style-scope{font-size: 25px !important;}
+/*首頁 影片卡片 標體放大*/
+.yt-lockup-metadata-view-model__title{font-size: 20px !important;}
+/*頻道 影片卡片 標體放大*/
+#video-title-link > .ytd-rich-grid-media.style-scope{font-size: 20px !important;}
+
+}
+
+@-moz-document url-prefix("https://www.youtube.com/@") {
+/*頻道會員加入鈕 暫時隱藏 */
+.ytSpecButtonViewModelHost{opacity:0;}
+.ytSpecButtonViewModelHost:hover{opacity:1;}
+
+}
+
+@-moz-document domain("youtube.com") {
+/*固定字幕CSS*/
+.caption-window {margin-bottom: 1px !important; bottom: 1% !important;background:#0000!important;}
+/*保存播放清單提示*/
+/*.yt-notification-action-renderer.style-scope.toast-button { background-color: #1fc6f9a8!important}*/
+/*.paper-toast-open.yt-notification-action-renderer.style-scope{ background-color: #1fc6f9a8!important}*/
+/*span.yt-formatted-string.style-scope{ color: #fff!important }/*字體顏色*/
+
+}
+
+@-moz-document domain("youtube.com") {
+/*方正化*/
+/*
+*:not([class*="spinner"],.html5-scrubber-button,
+.ytp-scrubber-button,.ytd-feed-filter-chip-bar-renderer.style-scope,.yt-spec-icon-badge-shape__badge,#chip-container) 
+{border-radius: unset  !important;}*/
+.style-scope:not([class*="spinner"]),[class*="button"],#ytd-player,[class*="Thumbnai"],[class*="PreviewImage"],[class*="avatar"],[class*="ytSearchbox"],[class*="shorts"],.yt-image-banner-view-model-wiz--inset
+,.ytImageBannerViewModelPositionAbsolute.ytImageBannerViewModelInset.ytImageBannerViewModelHost/*頻道Banner*/
+{border-radius:unset!important;}
+[class*="ytChipShape"]{border-radius:4px!important;}
+
+}
+
+@-moz-document domain("youtube.com") {
+/*直播封面*/
+/*直播標籤 位子調整*/
+.ytd-rich-grid-media.style-scope.video-badge {position:absolute!important;bottom:0px!important;right: 0px!important; }
+.yt-badge-shape--thumbnail-live{bottom:10px!important;right: -20px!important; }
+/*直播封面標籤*/
+/*.yt-badge-shape--thumbnail-live{display:none!important}*/
+/* 選定包含「即將直播」標籤的影片封面容器 */
+.yt-lockup-view-model__content-image:has(.yt-badge-shape--thumbnail-live){
+  position: relative;
+  overflow: hidden; /* 確保遮罩層不會超出封面範圍 */
+}
+
+/* 建立白色透明遮罩層 */
+ .yt-lockup-view-model__content-image:has(.yt-badge-shape--thumbnail-live)::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .6); 
+  z-index: 1;
+  pointer-events: none; 
+}
+.yt-lockup-view-model__content-image:has(.yt-badge-shape--thumbnail-live)::after
+{
+  content: '直播';    
+/* 定位設定 */
+    position: absolute;
+    top: 35%;  /* 距離頂部 8px */
+    left: 30%; /* 距離左側 8px */
+    z-index: 100; /* 確保圖層在最上面 */
+    
+/* 外觀樣式 */
+ color: #f20808;
+    
+/* 字體樣式 */
+    font-size: 6em; /* 稍大的字體 */
+    font-weight: 900;  /* 粗體 */
+    line-height: 1;   
+    /* 避免這個覆蓋標籤擋住滑鼠點擊影片 */
+    pointer-events: none; 
+}
+
+}
+
+@-moz-document domain("youtube.com") {
+/*YouTube 標題增加到 4 行*/
+#meta {
+    overflow: hidden;
+}
+.ytd-rich-grid-row.style-scope {
+    margin-bottom: 15px;
+}
+#video-title.ytd-rich-grid-media,.yt-lockup-metadata-view-model__title {
+    max-height: unset !important;
+    -webkit-line-clamp: 4 !important;
+}
+/*YouTube 標題全顯示*/
+/*  #video-title.ytd-rich-grid-media {max-height: unset !important;-webkit-line-clamp:unset!important;}*/
+
+}
+
+@-moz-document domain("youtube.com") {
+  /*立即隱藏會員專屬影片*/      
+        /* Home page 'Rich' Grid items */
+        ytd-rich-item-renderer:has(badge-shape.yt-badge-shape--commerce),
+        /* Search results & List items */
+        ytd-video-renderer:has(badge-shape.yt-badge-shape--commerce),
+        /* Sidebar / Compact items */
+        ytd-compact-video-renderer:has(badge-shape.yt-badge-shape--commerce),
+        /* Old grid layouts */
+        ytd-grid-video-renderer:has(badge-shape.yt-badge-shape--commerce),
+        /* Shorts / Reels */
+        ytd-reel-item-renderer:has(badge-shape.yt-badge-shape--commerce),
+        /* Playlist items */
+        ytd-playlist-panel-video-renderer:has(badge-shape.yt-badge-shape--commerce)
+        {display: none !important;}
+}
+
+@-moz-document url-prefix("https://www.youtube.com/@") {
+/*頻道橫圖加入透明圖層*/
+
+.ytImageBannerViewModelPositionAbsolute.ytImageBannerViewModelInset.ytImageBannerViewModelHost::before
+{
+    /* 創建一個偽元素 */
+    content: "";
+    /* 絕對定位，讓它完全覆蓋圖片容器 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 設定背景顏色和透明度 */
+    background-color: #0000;
+}
+
+}
+
+@-moz-document url-prefix("httpss://www.youtube.com/playlist?list=") {
+/*channel*/
+/*channel背景*/
+.ytd-browse > #primary{ background-color: #0000 !important}
+/*channel會員加入題醒*/
+.ytd-recognition-shelf-renderer.style-scope { display: none!important }
+
+}
+
+@-moz-document domain("youtube.com") {
+/*按鈕*/
+/*按鈕透明化*/
+[class*="button"]:not(.yt-spec-button-shape-next--filled,ytd-playlist-video-renderer.style-scope.ytd-playlist-video-list-renderer::before){background-color: #0000!important; }
+/*訂閱按鈕*/
+/*.yt-spec-button-shape-next--filled{background-color: #c80000!important}*/
+/*停用所有 CSS 模糊效果*/
+/* { filter: none !important;backdrop-filter: none !important;}*/
+
+}
+
+@-moz-document domain("youtube.com") {
+/* 懸浮影片卡片時，隱藏總時數標籤與進度條 */
+.ytd-rich-item-renderer:hover .yt-badge-shape,
+.ytd-rich-item-renderer:hover .ytThumbnailOverlayProgressBarHostUseLegacyBar,
+#dismissible:hover .yt-badge-shape,
+#dismissible:hover ytd-thumbnail-overlay-resume-playback-renderer {
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+}
+}
+
+@-moz-document domain("youtube.com") {
+/* YouTube 搜尋結果縮圖尺寸優化 */
+
+    /* 1. 調整搜尋結果容器與標題寬度 */
+    ytd-two-column-search-results-renderer[use-bigger-thumbs] #primary.ytd-two-column-search-results-renderer,
+    ytd-search[has-search-header] #header.ytd-search {
+        max-width: 1096px !important;
+    }
+
+    /* 2. 統一限制縮圖最大寬度 (影片、頻道、播放清單、電影、廣告) */
+    ytd-video-renderer[use-bigger-thumbs] ytd-thumbnail,
+    ytd-channel-renderer[use-bigger-thumbs] #avatar-section,
+    ytd-playlist-renderer[use-bigger-thumbs] ytd-playlist-thumbnail,
+    ytd-radio-renderer[use-bigger-thumbs] ytd-thumbnail,
+    ytd-movie-renderer[use-bigger-thumbs] .thumbnail-container,
+    ytd-promoted-video-renderer[use-bigger-thumbs] ytd-thumbnail,
+    ytd-promoted-sparkles-web-renderer[web-search-layout] #thumbnail-container {
+        max-width: 360px !important;
+        flex-basis: 360px !important;
+    }
+
+    /* 3. 針對新型號橫向佈局 (Lockup View) 的播放清單縮圖 */
+    yt-lockup-view-model.ytd-item-section-renderer > .yt-lockup-view-model--horizontal > a.yt-lockup-view-model__content-image {
+        width: 240px !important;
+        min-width: 240px !important;
+    }
+}
+
+@-moz-document regexp("^https?:\\/\\/(?:www\\.)?youtube\\.com(?!\\/(?:feed\\/you|feed\\/channels))(?:\\/.*)?$") {
+/*YouTube縮圖排列數目*/
+    /* 1. 基礎間距調整：縮小縮圖之間的空隙 */
+    ytd-rich-grid-renderer {
+        --ytd-rich-grid-gutter-margin: 0px !important;
+        --ytd-rich-grid-item-margin: 8px !important;
+        --ytd-rich-grid-row-margin: 8px !important;
+    }
+
+    /* 2. 修正對齊：確保縮圖左右平舖，不留多餘白邊 */
+    ytd-rich-item-renderer[rendered-from-rich-grid],
+    #contents.ytd-rich-grid-renderer {
+        margin-inline: calc(var(--ytd-rich-grid-item-margin) / 2) !important;
+    }
+
+    /* 3. 響應式排列：根據視窗寬度自動調整每行顯示數量 */
+    @media (max-width: 600px) {
+        ytd-rich-grid-renderer { --ytd-rich-grid-items-per-row: 2 !important; }
+    }
+    @media (min-width: 601px) and (max-width: 1026px) {
+        ytd-rich-grid-renderer { --ytd-rich-grid-items-per-row: 3 !important; }
+    }
+    @media (min-width: 1027px) and (max-width: 1665px) {
+        ytd-rich-grid-renderer { --ytd-rich-grid-items-per-row: 4 !important; }
+    }
+    @media (min-width: 1666px) {
+        ytd-rich-grid-renderer { --ytd-rich-grid-items-per-row: 6 !important; }
+    }
+
+    /* 4. 強力隱藏：Shorts 影片、新聞、電影等干擾區塊 */
+    ytd-rich-section-renderer,
+    ytd-reel-shelf-renderer { 
+        display: none !important; 
+    }
+
+
+   /* YouTube 頻道頁面寬度優化 */
+ytd-browse[page-subtype="channels"] ytd-two-column-browse-results-renderer {
+    max-width: unset !important;
+    width: 95% !important;
+}
+
+ytd-browse[page-subtype="channels"] #page-header-container > * {
+    padding: 0 2.5% !important;
+}
+
+   /* 隱藏毛玻璃與加載佔位符 */
+#frosted-glass,ytd-ghost-grid-renderer {
+    display: none !important;
+}
+
+}
