@@ -54,7 +54,7 @@ youtube.com###actions :is([aria-label="Share"],[aria-label="剪輯片段"],[aria
 !影片下方更多清單 多餘按鈕
 youtube.com##ytd-menu-service-item-download-renderer.ytd-menu-popup-renderer.style-scope
 ! 影片選項 移除 加入待播清單和下載
-youtube.com##ytd-menu-service-item-renderer.ytd-menu-popup-renderer.style-scope > .ytd-menu-service-item-renderer.style-scope:has-text(/加入待播清單|檢舉|剪輯片段|超級感謝/)
+!youtube.com##ytd-menu-service-item-renderer.ytd-menu-popup-renderer.style-scope > .ytd-menu-service-item-renderer.style-scope:has-text(/加入待播清單|檢舉|剪輯片段|超級感謝/)
 ! 影片播放列 多餘按鈕
 youtube.com##.ytp-button.ytp-prev-button,.ytp-button.ytp-autonav-toggle,.ytp-button.ytp-fullscreen-button,.ytp-button.ytp-pip-button,.ytp-button.ytp-next-button,.ytp-button.ytp-size-button
 
@@ -64,7 +64,7 @@ youtube.com##.ytp-button.ytp-prev-button,.ytp-button.ytp-autonav-toggle,.ytp-but
 youtube.com##.ytp-quality-menu .ytp-menuitem:has(.ytp-premium-label)
 
 ! 首頁 popupmenu "加入待播清單|下載|隱藏"
-youtube.com##yt-list-item-view-model.yt-list-item-view-model:has-text(/加入待播清單|下載|隱藏/)
+youtube.com##yt-list-item-view-model:has([d^="M2 2.864v6.277a.5.5"],[d^="M12 2a1 1 0 00-1 1v11.586l-4.293-4.293a1 1 0 10-1.414 1.414L12 18.414l6.707-6.707a1 1 0 10-1.414-1.414L13 14.586V3a1 1 0 00-1-1Zm7 18H5a1 1 0 000 2h14a1 1 0 000-2Z"],[d^="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1Zm0 2a9 9 0 018.246 12.605L4.755 6.661A8.99 8.99 0 0112 3ZM3.754 8.393l15.491 8.944A9 9 0 013.754 8.393Z"])
 ! watch later popupmenu "移除看過的影片"
 youtube.com##ytd-menu-navigation-item-renderer.ytd-menu-popup-renderer.style-scope:has-text(/移除看過的影片/)
 ! playlist popupmenu "隨機撥放"
@@ -133,8 +133,6 @@ youtube.com##:is(.smartimation__content,.animated-action__content-with-backgroun
 !Live即時反應疊加
 youtube.com##yt-reaction-control-panel-view-model
 youtube.com##yt-reaction-control-panel-overlay-view-model
-! 移除 pop ad
-!youtube.com##ytd-popup-container > tp-yt-paper-dialog > ytd-mealbar-promo-renderer, ytd-popup-container > tp-yt-paper-dialog > yt-mealbar-promo-renderer:has-text(/YouTube TV|成為這個頻道的會員/)
 
 !隱藏 僅限會員的影片
 youtube.com##:is(ytd-rich-item-renderer,ytd-compact-video-renderer,ytd-video-renderer,ytd-grid-video-renderer):has(.yt-badge-shape--typography.yt-badge-shape--commerce.yt-badge-shape,.yt-badge-shape--membership)
