@@ -129,7 +129,6 @@ youtube.com##ytd-browse[page-subtype="home"] ytd-rich-section-renderer:not(:has(
 !防止即時更新統計資料（例如按讚和觀看次數）
 ||youtube.com/youtubei/v1/updated_metadata
 !隱藏「智慧」動畫 這些動畫通常包含“lottie”邊框
-youtube.com##yt-smartimation > :not(.smartimation__content)
 youtube.com##:is(.smartimation__content,.animated-action__content-with-background)>:has(>lottie-component)
 !Live即時反應疊加
 youtube.com##yt-reaction-control-panel-view-model
