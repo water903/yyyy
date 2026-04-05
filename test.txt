@@ -138,9 +138,6 @@ youtube.com##yt-reaction-control-panel-overlay-view-model
 youtube.com##:is(ytd-rich-item-renderer,ytd-compact-video-renderer,ytd-video-renderer,ytd-grid-video-renderer):has(.yt-badge-shape--typography.yt-badge-shape--commerce.yt-badge-shape,.yt-badge-shape--membership)
 !隱藏 直播VOD的影片
 youtube.com##ytd-browse:is([page-subtype="home"], [page-subtype="subscriptions"]) ytd-rich-item-renderer:has(div.ytContentMetadataViewModelMetadataRow:has-text(/直播時間/))
-!隱藏 即將直播的影片
-!youtube.com##ytd-rich-item-renderer:has-text(即將直播)
-youtube.com##ytd-rich-item-renderer:has(.ytLockupAttachmentsViewModelAttachment)
 
 ! 暫停後推薦
 youtube-nocookie.com,youtube.com##.ytp-pause-overlay, .show-video-thumbnail-button
