@@ -161,8 +161,8 @@ youtube.com##ytd-watch-metadata[description-collapsed]:style( --yt-saturated-bas
 youtube.com##ytd-watch-metadata[description-collapsed] [style*="color:"] { color: unset !important; }
 
 !移除YouTube 主頁影片懸停時出現彩色覆蓋
-youtube.com##.yt-spec-touch-feedback-shape__hover-effect
-youtube.com##html[dark] yt-lockup-metadata-view-model .yt-lockup-metadata-view-model__metadata[style^="color:"]:style( color: #aaa !important; )
-youtube.com##html[dark] yt-lockup-metadata-view-model .yt-lockup-metadata-view-model__title[style^="color:"]:style( color: #f1f1f1 !important; )
-youtube.com##html:not([dark]) yt-lockup-metadata-view-model .yt-lockup-metadata-view-model__metadata[style^="color:"]:style( color: #606060 !important; )
-youtube.com##html:not([dark]) yt-lockup-metadata-view-model .yt-lockup-metadata-view-model__title[style^="color:"]:style( color: #0f0f0f !important; )
+youtube.com###primary yt-lockup-view-model yt-touch-feedback-shape
+youtube.com##html[dark] yt-lockup-metadata-view-model :is(.yt-lockup-metadata-view-model__metadata,.ytLockupMetadataViewModelMetadata)[style^="color:"]:style( color: #aaa !important; )
+youtube.com##html[dark] yt-lockup-metadata-view-model :is(.yt-lockup-metadata-view-model__title,.ytLockupMetadataViewModelTitle)[style^="color:"]:style( color: #f1f1f1 !important; )
+youtube.com##html:not([dark]) yt-lockup-metadata-view-model :is(.yt-lockup-metadata-view-model__metadata,.ytLockupMetadataViewModelMetadata)[style^="color:"]:style( color: #606060 !important; )
+youtube.com##html:not([dark]) yt-lockup-metadata-view-model :is(.yt-lockup-metadata-view-model__title,.ytLockupMetadataViewModelTitle)[style^="color:"]:style( color: #0f0f0f !important; )
