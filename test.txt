@@ -45,7 +45,7 @@ youtube.com##ytd-browse[page-subtype="home"] ytd-rich-item-renderer:has(div.ytTh
 ! Hide fully watched videos in a channel
 !youtube.com##ytd-rich-item-renderer:has(#progress[style^="width: 100%"])
 ! 影片選項,首頁popupmenu,影片縮圖 加入待播清單
-youtube.com##yt-list-item-view-model, ytd-menu-service-item-renderer:has([d^="M2 2.864v6.277a.5.5"])
+youtube.com##:is(yt-list-item-view-model, ytd-menu-service-item-renderer):has([d^="M2 2.864v6.277a.5.5"])
 youtube.com##button[aria-label="加入待播清單"]
 ! 影片下方 多餘按鈕
 youtube.com##.ytd-download-button-renderer
