@@ -92,8 +92,9 @@ youtube.com###country-code
 !滑鼠懸停在 YouTube 影片上時消除影片中的白霧
 youtube.com##.ytp-gradient-bottom
 youtube.com##.ytp-gradient-top
-!移除 播放清單 推薦播放清單 推薦影片
-!youtube.com##ytd-continuation-item-renderer.ytd-section-list-renderer
+!移除 播放清單 推薦播放清單和推薦影片
+youtube.com##ytd-browse[page-subtype="playlist"] ytd-item-section-renderer.ytd-section-list-renderer.style-scope:not(:nth-of-type(1))
+youtube.com##ytd-browse[page-subtype="playlist"] ytd-continuation-item-renderer.ytd-section-list-renderer
 !移除 首頁上方 讓你耳目一新 多餘按鈕
 youtube.com##ytd-browse[page-subtype="home"] yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer.style-scope:not(:first-child,:last-child)
 !移除 頻道ICON上的直播標籤
@@ -113,7 +114,7 @@ youtube.com##ytd-search ytd-item-section-renderer>#contents>:is(:not(ytd-video-r
 
 !資訊面板中的主題上下文
 youtube.com,youtube-nocookie.com##.ytp-info-panel-preview
-! 隱藏 播放清單 推薦影片
+!隱藏 播放清單 推薦影片
 youtube.com##ytd-browse[page-subtype="home"] ytd-rich-section-renderer:not(:has(ytd-feed-nudge-renderer))
 !防止即時更新統計資料（例如按讚和觀看次數）
 ||youtube.com/youtubei/v1/updated_metadata
@@ -137,10 +138,8 @@ youtube-nocookie.com,youtube.com##iframe ~ #topvbar > #rvid
 youtube-nocookie.com,youtube.com##.html5-video-player :is(.ytp-gradient-top,.ytp-gradient-bottom)
 
 !playlist背板顏色移除
-youtube.com##.yt-page-header-view-model__page-header-background > .ytCinematicContainerViewModelHost
-youtube.com##ytd-browse[page-subtype="playlist"] .ytd-playlist-header-renderer.style-scope.immersive-header-background-wrapper
-!playlist背板微光移除
-youtube.com##.ytThumbnailViewModelBlurredImage .ytCoreImageLoaded
+youtube.com##ytd-browse[page-subtype="playlist"] .immersive-header-background-wrapper
+youtube.com##ytd-browse[page-subtype="playlist"] .ytPageHeaderViewModelBackground .ytCinematicContainerViewModelHost
 !標題字體大小
 !youtube.com##ytd-rich-grid-media #video-title:style(font-size: 20px !important;)
 !搜尋建議下拉選單 刪除縮圖
