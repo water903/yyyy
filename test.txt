@@ -121,8 +121,6 @@ youtube.com##:is(.smartimation__content,.animated-action__content-with-backgroun
 !Live即時反應疊加
 youtube.com##yt-reaction-control-panel-view-model,yt-reaction-control-panel-overlay-view-model
 
-!隱藏 僅限會員的影片
-youtube.com##:is(ytd-rich-item-renderer,ytd-compact-video-renderer,ytd-video-renderer,ytd-grid-video-renderer):has(.yt-badge-shape--typography.yt-badge-shape--commerce.yt-badge-shape,.yt-badge-shape--membership)
 !隱藏 直播VOD的影片
 youtube.com##ytd-browse:is([page-subtype="home"], [page-subtype="subscriptions"]) ytd-rich-item-renderer:has(.ytContentMetadataViewModelMetadataText:has-text(/直播時間/))
 !隱藏 即將直播的影片
@@ -144,10 +142,6 @@ youtube.com##ytd-browse[page-subtype="playlist"] .ytPageHeaderViewModelBackgroun
 youtube.com##.ytSuggestionComponentVisualSuggestThumbnail
 ! YouTube 主頁和訂閱（網格視圖）- 隱藏 Shorts 部分
 youtube.com##ytd-browse:is([page-subtype="home"], [page-subtype="subscriptions"]) [is-shorts]
-
-!removing the colors of youtube description box
-youtube.com##ytd-watch-metadata[description-collapsed]:style( --yt-saturated-base-background: unset !important; --yt-saturated-raised-background: unset !important; --yt-saturated-additive-background: unset !important; --yt-saturated-text-primary: unset !important; --yt-saturated-text-secondary: unset !important; --yt-saturated-outline:  unset !important; --yt-saturated-key-light:  unset !important; --yt-saturated-collection-stack:  unset !important; --yt-saturated-inverted-background: unset !important; --yt-saturated-text-primary-inverse:  unset !important; --yt-saturated-text-disabled: unset !important; --yt-saturated-drop-shadow: unset !important; --yt-saturated-card-outline: unset !important; --yt-saturated-overlay-background: unset !important; --yt-saturated-overlay-text-primary: unset !important; )
-youtube.com##ytd-watch-metadata[description-collapsed] [style*="color:"] { color: unset !important; }
 
 !移除YouTube 主頁影片懸停時出現彩色覆蓋
 youtube.com###primary yt-lockup-view-model yt-touch-feedback-shape
