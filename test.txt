@@ -19,8 +19,7 @@ youtube.com##.ytp-play-progress:style(background:red!important;)
 youtube.com##.ytd-thumbnail-overlay-resume-playback-renderer:style(background:red!important;)
 
 ! Homepage - distractions (non-videos) | temporary fix: remove gaps + ghost renderer
-youtube.com##ytd-browse[page-subtype="home"] #contents.ytd-rich-grid-renderer > :not(ytd-rich-item-renderer,ytd-continuation-item-renderer)
-youtube.com##ytd-browse[page-subtype="subscriptions"] #contents.ytd-rich-grid-renderer > :not(ytd-rich-item-renderer,ytd-continuation-item-renderer)
+youtube.com##ytd-browse:is([page-subtype="home"],[page-subtype="subscriptions"]) #contents.ytd-rich-grid-renderer > :not(ytd-rich-item-renderer,ytd-continuation-item-renderer)
 
 !首頁上方多餘按鈕
 youtube.com##.style-default.ytd-masthead.style-scope
@@ -89,9 +88,6 @@ youtube.com##.html5-video-player.ended-mode .ytp-fullscreen-grid
 youtube.com##[class*="ytp-ce-element"]
 ! logo旁的地區代號
 youtube.com###country-code
-!滑鼠懸停在 YouTube 影片上時消除影片中的白霧
-youtube.com##.ytp-gradient-bottom
-youtube.com##.ytp-gradient-top
 !移除 播放清單 推薦播放清單和推薦影片
 youtube.com##ytd-browse[page-subtype="playlist"] ytd-item-section-renderer.ytd-section-list-renderer.style-scope:not(:nth-of-type(1))
 youtube.com##ytd-browse[page-subtype="playlist"] ytd-continuation-item-renderer.ytd-section-list-renderer
@@ -124,13 +120,12 @@ youtube.com##yt-reaction-control-panel-view-model,yt-reaction-control-panel-over
 !隱藏 直播VOD的影片
 youtube.com##ytd-browse:is([page-subtype="home"], [page-subtype="subscriptions"]) ytd-rich-item-renderer:has(.ytContentMetadataViewModelMetadataText:has-text(/直播時間/))
 !隱藏 即將直播的影片
-!youtube.com##ytd-rich-item-renderer:has-text(即將直播)
 youtube.com##ytd-rich-item-renderer:has(.ytLockupAttachmentsViewModelAttachment)
 
 ! 暫停後推薦
 youtube-nocookie.com,youtube.com##.ytp-pause-overlay, .show-video-thumbnail-button
 youtube-nocookie.com,youtube.com##iframe ~ #topvbar > #rvid
-!去除 YouTube 嵌入影片滑鼠懸停時的黑色透明背景
+!去除 YouTube 影片上下方滑鼠懸停時的黑霧白霧背景
 youtube-nocookie.com,youtube.com##.html5-video-player :is(.ytp-gradient-top,.ytp-gradient-bottom)
 
 !playlist背板顏色移除
@@ -140,7 +135,7 @@ youtube.com##ytd-browse[page-subtype="playlist"] .ytPageHeaderViewModelBackgroun
 !youtube.com##ytd-rich-grid-media #video-title:style(font-size: 20px !important;)
 !搜尋建議下拉選單 刪除縮圖
 youtube.com##.ytSuggestionComponentVisualSuggestThumbnail
-! YouTube 主頁和訂閱（網格視圖）- 隱藏 Shorts 部分
+! YouTube 主頁和訂閱 隱藏 Shorts 部分
 youtube.com##ytd-browse:is([page-subtype="home"], [page-subtype="subscriptions"]) [is-shorts]
 
 !移除YouTube 主頁影片懸停時出現彩色覆蓋
