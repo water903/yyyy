@@ -25,17 +25,19 @@ youtube.com##ytd-browse:is([page-subtype="home"],[page-subtype="subscriptions"])
 youtube.com##.style-default.ytd-masthead.style-scope
 youtube.com###voice-search-button
 youtube.com###buttons > ytd-button-renderer.ytd-masthead
+!首頁上方 讓你耳目一新 多餘按鈕
+youtube.com##ytd-browse[page-subtype="home"] yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer.style-scope:not(:first-child,:last-child)
 !首頁右方側邊欄多餘按鈕
 youtube.com###section-items > ytd-guide-entry-renderer.ytd-guide-collapsible-section-entry-renderer.style-scope:not(:nth-child(3))
 youtube.com##.ytd-guide-downloads-entry-renderer
 youtube.com##ytd-guide-collapsible-entry-renderer.ytd-guide-collapsible-section-entry-renderer.style-scope > .ytd-guide-collapsible-entry-renderer.style-scope
 youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:is(:nth-of-type(4),:nth-of-type(5),:nth-of-type(6))
 youtube.com###footer
-
-! YT - 隱藏線上調查(彈出式調查|首頁影片之間)
+! logo旁的地區代號
+youtube.com###country-code
+!隱藏首頁線上調查(彈出式調查|首頁影片之間)
 youtube.com##ytd-single-option-survey-renderer,ytd-inline-survey-renderer
-
-! YT Home - Hide Mixes
+!隱藏首頁Mixes
 youtube.com##ytd-rich-item-renderer:has([href*="start_radio=1"])
 ! Hide fully watched videos on homepage
 youtube.com##ytd-browse[page-subtype="home"] ytd-rich-item-renderer:has(div.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment[style^="width: 100%"])
@@ -43,6 +45,7 @@ youtube.com##ytd-browse[page-subtype="home"] ytd-rich-item-renderer:has(div.ytTh
 !youtube.com##ytd-browse[page-subtype="subscriptions"] yt-lockup-view-model:has(div.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment[style^="width: 100%"])
 ! Hide fully watched videos in a channel
 !youtube.com##ytd-rich-item-renderer:has(#progress[style^="width: 100%"])
+
 ! 影片選項,首頁popupmenu,影片縮圖 加入待播清單
 youtube.com##:is(yt-list-item-view-model, ytd-menu-service-item-renderer):has([d^="M2 2.864v6.277a.5.5"])
 youtube.com##[aria-label="加入待播清單"]
@@ -53,46 +56,40 @@ youtube.com###actions :is([aria-label="Share"],[aria-label="剪輯片段"],[aria
 youtube.com##ytd-menu-service-item-download-renderer.ytd-menu-popup-renderer
 ! 影片播放列 多餘按鈕
 youtube.com##.ytp-button.ytp-prev-button,.ytp-button.ytp-autonav-toggle,.ytp-button.ytp-fullscreen-button,.ytp-button.ytp-pip-button,.ytp-button.ytp-next-button,.ytp-button.ytp-size-button
-
 !在影片品質選單中隱藏“1080p Premium”
 youtube.com##.ytp-quality-menu .ytp-menuitem:has(.ytp-premium-label)
-
-! 首頁 popupmenu "下載|隱藏"
-youtube.com##yt-list-item-view-model:has([d^="M12 2a1 1"],[d^="M12 1C5.925"])
-! watch later popupmenu "移除看過的影片"
-youtube.com##.yt-simple-endpoint .ytd-menu-navigation-item-renderer
-! playlist popupmenu "隨機撥放"
-youtube.com##.play-menu .shuffle-button
-
 !刪除 YouTube 播放器中間出現的「暫停/播放」 螢幕快轉
 youtube.com##.html5-video-player .ytp-bezel
 youtube.com##.ytp-seek-overlay
 !刪除 YouTube 播放器右上出現的 playlist-menu button
 youtube.com##.ytp-button.ytp-playlist-menu-button
-!刪除 YouTube 的音量增加/減少動畫
+!刪除 YouTube 播放器音量增加/減少動畫
 !youtube.com##.html5-video-player > [aria-label$="volume"]
-
-! YT Player - Hide the "Loading" Spinner
+!刪除 YouTube 播放器Loading Spinner動畫
 youtube.com##.ytp-spinner
-! YT Player - Block Youtube AI-Generated summary
-youtube.com###expandable-metadata
 ! YT Player - Settings - Hide Stable Volume, Ambient mode, Annotations, and Sleep timer
 youtube.com##.ytp-settings-menu .ytp-menuitem:has([d^="M7 13H5v-2h2v2zm3-4H8v6h2V9zm3"],[d^="M21 7v10H3V7h18m1-1H2v12h20V6zM11"],[d^="M17.5,7c1.93,0,3.5,1.57,3.5,3.5c0"],[d^="M16.67,4.31C19.3,5.92,21,8.83"])
+!暫停後推薦
+youtube-nocookie.com,youtube.com##.ytp-pause-overlay, .show-video-thumbnail-button
+youtube-nocookie.com,youtube.com##iframe ~ #topvbar > #rvid
+!去除 YouTube 影片上下方滑鼠懸停時的黑霧白霧背景
+youtube-nocookie.com,youtube.com##.html5-video-player :is(.ytp-gradient-top,.ytp-gradient-bottom)
 
-! 影片 推薦影片
+! 首頁 popupmenu "下載|隱藏"
+youtube.com##yt-list-item-view-model:has([d^="M12 2a1 1"],[d^="M12 1C5.925"])
+! watch later popupmenu "移除看過的影片"
+youtube.com##ytd-browse[page-subtype="playlist"] ytd-menu-navigation-item-renderer:has(path[d^="M12 1C5.925"])
+! playlist popupmenu "隨機撥放"
+youtube.com##.ytd-browse[page-subtype="playlist"] play-menu .shuffle-button
+
+!影片側邊推薦影片
 youtube.com###related
-!和/或片尾畫面/接下來自動播放
-/endscreen.js$script,xhr,important,domain=youtube.com
-! 影片結束時 結束卡片
+!影片結束時 結束卡片
 youtube.com##.html5-video-player.ended-mode .ytp-fullscreen-grid
 youtube.com##[class*="ytp-ce-element"]
-! logo旁的地區代號
-youtube.com###country-code
 !移除 播放清單 推薦播放清單和推薦影片
 youtube.com##ytd-browse[page-subtype="playlist"] ytd-item-section-renderer.ytd-section-list-renderer.style-scope:not(:nth-of-type(1))
 youtube.com##ytd-browse[page-subtype="playlist"] ytd-continuation-item-renderer.ytd-section-list-renderer
-!移除 首頁上方 讓你耳目一新 多餘按鈕
-youtube.com##ytd-browse[page-subtype="home"] yt-chip-cloud-chip-renderer.ytd-feed-filter-chip-bar-renderer.style-scope:not(:first-child,:last-child)
 !移除 頻道ICON上的直播紅環和文字標籤
 youtube.com##.ytSpecAvatarShapeLiveRing::after,.ytSpecAvatarShapeLiveBadge
 !隱藏 YouTube 播放速度滑桿
@@ -122,22 +119,17 @@ youtube.com##ytd-browse:is([page-subtype="home"], [page-subtype="subscriptions"]
 !隱藏 即將直播的影片
 youtube.com##ytd-rich-item-renderer:has(.ytLockupAttachmentsViewModelAttachment)
 
-! 暫停後推薦
-youtube-nocookie.com,youtube.com##.ytp-pause-overlay, .show-video-thumbnail-button
-youtube-nocookie.com,youtube.com##iframe ~ #topvbar > #rvid
-!去除 YouTube 影片上下方滑鼠懸停時的黑霧白霧背景
-youtube-nocookie.com,youtube.com##.html5-video-player :is(.ytp-gradient-top,.ytp-gradient-bottom)
-
 !playlist背板顏色移除
 youtube.com##ytd-browse[page-subtype="playlist"] .immersive-header-background-wrapper
 youtube.com##ytd-browse[page-subtype="playlist"] .ytPageHeaderViewModelBackground .ytCinematicContainerViewModelHost
-!標題字體大小
-!youtube.com##ytd-rich-grid-media #video-title:style(font-size: 20px !important;)
 !搜尋建議下拉選單 刪除縮圖
 youtube.com##.ytSuggestionComponentVisualSuggestThumbnail
 ! YouTube 主頁和訂閱 隱藏 Shorts 部分
 youtube.com##ytd-browse:is([page-subtype="home"], [page-subtype="subscriptions"]) [is-shorts]
 
+!!移除YouTube 影片說明欄懸停時出現彩色覆蓋
+youtube.com##ytd-watch-metadata[description-collapsed]:style( --yt-saturated-base-background: unset !important; --yt-saturated-raised-background: unset !important; --yt-saturated-additive-background: unset !important; --yt-saturated-text-primary: unset !important; --yt-saturated-text-secondary: unset !important; --yt-saturated-outline:  unset !important; --yt-saturated-key-light:  unset !important; --yt-saturated-collection-stack:  unset !important; --yt-saturated-inverted-background: unset !important; --yt-saturated-text-primary-inverse:  unset !important; --yt-saturated-text-disabled: unset !important; --yt-saturated-drop-shadow: unset !important; --yt-saturated-card-outline: unset !important; --yt-saturated-overlay-background: unset !important; --yt-saturated-overlay-text-primary: unset !important; )
+youtube.com##ytd-watch-metadata[description-collapsed] [style*="color:"] { color: unset !important; }
 !移除YouTube 主頁影片懸停時出現彩色覆蓋
 youtube.com###primary yt-lockup-view-model yt-touch-feedback-shape
 youtube.com##html[dark] yt-lockup-metadata-view-model :is(.yt-lockup-metadata-view-model__metadata,.ytLockupMetadataViewModelMetadata)[style^="color:"]:style( color: #aaa !important; )
