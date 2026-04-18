@@ -121,7 +121,8 @@ youtube.com##ytd-rich-item-renderer:has(.ytLockupAttachmentsViewModelAttachment)
 
 !playlist背板顏色移除
 youtube.com##ytd-browse[page-subtype="playlist"] .immersive-header-background-wrapper
-youtube.com##ytd-browse[page-subtype="playlist"] .ytPageHeaderViewModelBackground .ytCinematicContainerViewModelHost
+!/feed/playlists微光移除
+youtube.com##.ytPageHeaderViewModelBackground .ytCinematicContainerViewModelHost
 !搜尋建議下拉選單 刪除縮圖
 youtube.com##.ytSuggestionComponentVisualSuggestThumbnail
 ! YouTube 主頁和訂閱 隱藏 Shorts 部分
