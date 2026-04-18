@@ -78,7 +78,7 @@ youtube-nocookie.com,youtube.com##.html5-video-player :is(.ytp-gradient-top,.ytp
 ! 首頁 popupmenu "下載|隱藏"
 youtube.com##yt-list-item-view-model:has([d^="M12 2a1 1"],[d^="M12 1C5.925"])
 !playlist popupmenu "移除看過的影片""新增影片"
-youtube.com##ytd-browse[page-subtype="playlist"] ytd-menu-navigation-item-renderer:has(path[d^="M12 1C5.925"]),.ytd-menu-service-item-renderer:has(path[d^="M 12 3 a"])
+youtube.com##ytd-browse[page-subtype="playlist"] .ytd-menu-navigation-item-renderer.yt-simple-endpoint,.iron-selected.ytd-menu-popup-renderer
 !playlist popupmenu "隨機撥放"
 youtube.com##.ytd-browse[page-subtype="playlist"] play-menu .shuffle-button
 
