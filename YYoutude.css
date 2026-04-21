@@ -29,8 +29,7 @@ ytd-mini-guide-renderer,
 #cinematics.ytd-watch-flexy {
     display: none !important;
 }
-/*直播標籤 圖示*/
-.ytBadgeShapeThumbnailLive .ytBadgeShapeIcon{ display: none!important }
+
 /*通知*/
 #contentWrapper > .ytd-popup-container{background-color: #0a0a0b !important;}
 .ytd-multi-page-menu-renderer{background-color: #0a0a0b !important;}
@@ -43,6 +42,16 @@ ytd-mini-guide-renderer,
 /*頻道直接強制渲染背景*/
 #page-header-banner,.ytd-tabbed-page-header
 {background-color: #000000 !important;}
+/*聊天重播*/
+#teaser-carousel{display: none !important;}
+    /*隱藏：Shorts 影片、新聞、電影等干擾區塊 */
+ytd-rich-section-renderer,ytd-reel-shelf-renderer { 
+        display: none !important; }
+
+   /* 隱藏毛玻璃與加載佔位符 */
+#frosted-glass,ytd-ghost-grid-renderer {
+    display: none !important;
+}
 
 }
 
@@ -71,6 +80,14 @@ h1.ytd-watch-metadata > .ytd-watch-metadata{font-size: 25px !important;}
 }
 
 @-moz-document domain("youtube.com") {
+/*直播強調*/
+ytd-rich-item-renderer.ytd-rich-grid-renderer.style-scope:has(.ytBadgeShapeThumbnailLive){background-color: darkmagenta}
+/*直播標籤 圖示*/
+.ytBadgeShapeThumbnailLive .ytBadgeShapeIcon{ display: none!important }
+
+}
+
+@-moz-document domain("youtube.com") {
 /*固定字幕CSS*/
 .caption-window {margin-bottom: 1px !important; bottom: 1% !important;background:#0000!important;}
 /*保存播放清單提示*/
@@ -82,7 +99,8 @@ h1.ytd-watch-metadata > .ytd-watch-metadata{font-size: 25px !important;}
 
 @-moz-document domain("youtube.com") {
 /*方正化*/
-:is([class*="ytd-"],[class*="yt-"]):not([class*="spinner"],[class*="scrubber"]),[class*="Avatar"],button,Input,.ytSearchboxComponentInputBoxDark.ytSearchboxComponentInputBox,.ytImageBannerViewModelHost /*頻道Banner*/ 
+:is([class*="ytd-"],[class*="yt-"]):not([class*="spinner"],[class*="scrubber"]),[class*="Avatar"],Input,yt-button-shape */*WL*/,div.ytFlexibleActionsViewModelAction *,
+.ytSearchboxComponentInputBoxDark.ytSearchboxComponentInputBox/*Search*/,.ytImageBannerViewModelHost /*頻道Banner*/ 
 {border-radius: 0 !important;}
 /* Modals and popups */
 ytd-popup-container,ytd-popup-container *:not([class*="spinner"]),yt-dialog-renderer,tp-yt-paper-dialog,ytd-menu-popup-renderer,ytd-modal-with-element-renderer,paper-dialog,ytd-consent-bump-v2-renderer {
@@ -178,62 +196,78 @@ ytd-browse[page-subtype="channels"] .ytSpecButtonViewModelHost:hover{opacity:1;}
 
 @-moz-document domain("youtube.com") {
 /* YouTube 搜尋結果縮圖尺寸優化 */
-
 /* 針對新型號橫向佈局 (Lockup View) 的播放清單縮圖 */
 yt-lockup-view-model.ytLockupViewModelWrapper.lockup.ytd-item-section-renderer {
-        width: 720px !important;
-        min-width: 720px !important;
-    }
+        width: 720px !important;min-width: 720px !important;
+}
 
 }
 
 @-moz-document regexp("^https?:\\/\\/(?:www\\.)?youtube\\.com(?!\\/(?:feed\\/you|feed\\/channels))(?:\\/.*)?$") {
 /*YouTube縮圖排列數目*/
-    /* 1. 基礎間距調整：縮小縮圖之間的空隙 */
-    ytd-rich-grid-renderer {
+/*排除以下路徑：
+/feed/you (個人內容)
+/feed/channels (訂閱頻道清單)*/
+
+/* 1. 基礎間距調整：縮小縮圖之間的空隙 */
+ytd-rich-grid-renderer {
         --ytd-rich-grid-gutter-margin: 0px !important;
         --ytd-rich-grid-item-margin: 8px !important;
         --ytd-rich-grid-row-margin: 8px !important;
-    }
+}
 
-    /* 2. 修正對齊：確保縮圖左右平舖，不留多餘白邊 */
-    ytd-rich-item-renderer[rendered-from-rich-grid],
-    #contents.ytd-rich-grid-renderer {
+/* 2. 修正對齊：確保縮圖左右平舖，不留多餘白邊 */
+ytd-rich-item-renderer[rendered-from-rich-grid],#contents.ytd-rich-grid-renderer {
         margin-inline: calc(var(--ytd-rich-grid-item-margin) / 2) !important;
-    }
+}
 
-    /* 3. 響應式排列：根據視窗寬度自動調整每行顯示數量 */
-    @media (max-width: 600px) {
+/* 3. 響應式排列：根據視窗寬度自動調整每行顯示數量 */
+@media (max-width: 600px) {
         ytd-rich-grid-renderer { --ytd-rich-grid-items-per-row: 2 !important; }
     }
-    @media (min-width: 601px) and (max-width: 1026px) {
+@media (min-width: 601px) and (max-width: 1026px) {
         ytd-rich-grid-renderer { --ytd-rich-grid-items-per-row: 3 !important; }
     }
-    @media (min-width: 1027px) and (max-width: 1665px) {
+@media (min-width: 1027px) and (max-width: 1665px) {
         ytd-rich-grid-renderer { --ytd-rich-grid-items-per-row: 4 !important; }
     }
-    @media (min-width: 1666px) {
+@media (min-width: 1666px) {
         ytd-rich-grid-renderer { --ytd-rich-grid-items-per-row: 6 !important; }
-    }
-
-    /* 4. 強力隱藏：Shorts 影片、新聞、電影等干擾區塊 */
-    ytd-rich-section-renderer,
-    ytd-reel-shelf-renderer { 
-        display: none !important; 
-    }
-
-   /* YouTube 頻道頁面寬度優化 */
-ytd-browse[page-subtype="channels"] ytd-two-column-browse-results-renderer {
-    max-width: unset !important;
-    width: 98% !important;
 }
+/* YouTube 頻道頁面額外修正*/
+    /*頻道PageHeader*/
 ytd-browse[page-subtype="channels"] #page-header-container > * {
     padding: 0 2.5% !important;
 }
-
-   /* 隱藏毛玻璃與加載佔位符 */
-#frosted-glass,ytd-ghost-grid-renderer {
-    display: none !important;
+    /*頻道頁面額外修正*/
+ytd-browse[page-subtype="channels"] ytd-two-column-browse-results-renderer{
+    max-width:unset!important;
+    width: 98% !important;
+}
+    /*@/playlists 播放清單額外修正*/
+ytd-browse[page-subtype="channels"] yt-lockup-view-model.ytLockupViewModelWrapper.lockup.ytd-grid-renderer {
+    flex: none !important;/* 防止 flex 增長擠壓 */
+    width: calc(100% / 6 - 16px) !important;
+    margin: 0 8px 24px 8px !important;
+}
+@media (max-width: 1000px) {
+    ytd-browse[page-subtype="channels"] yt-lockup-view-model.ytLockupViewModelWrapper.lockup.ytd-grid-renderer {
+        width: calc(100% / 3 - 10px) !important;
+    }
+}
+    /*@/shorts 額外修正(排除播放清單)*/
+ytd-browse[page-subtype="channels"] #contents:not(:has(yt-lockup-view-model)){
+    max-width:unset!important;
+    width: unset!important;
+}
+ytd-browse[page-subtype="channels"] ytd-rich-item-renderer.ytd-rich-grid-renderer {
+    flex: none !important;/* 防止 flex 增長擠壓 */
+    width: calc(100% / 6 - 8px) !important;
+}
+@media (max-width: 1000px) {
+    ytd-browse[page-subtype="channels"] ytd-rich-item-renderer.ytd-rich-grid-renderer  {
+        width: calc(100% / 3 - 8px) !important;
+    }
 }
 
 }
