@@ -123,16 +123,19 @@ youtube.com##ytd-rich-item-renderer:has(.ytLockupAttachmentsViewModelAttachment)
 youtube.com##ytd-browse[page-subtype="playlist"] .immersive-header-background-wrapper,.ytPageHeaderViewModelBackground .ytCinematicContainerViewModelHost
 !/feed/playlists微光移除
 youtube.com##.ytThumbnailViewModelBlurredImage .ytCoreImageLoaded
+! 專輯微光
+youtube.com##.ytThumbnailViewModelBlurredImage
 !搜尋建議下拉選單 刪除縮圖
 youtube.com##.ytSuggestionComponentVisualSuggestThumbnail
 ! YouTube 主頁和訂閱 隱藏 Shorts 部分
 youtube.com##ytd-browse:is([page-subtype="home"], [page-subtype="subscriptions"]) [is-shorts]
 
+
 !!移除YouTube 影片說明欄懸停時出現彩色覆蓋
 youtube.com##ytd-watch-metadata[description-collapsed]:style( --yt-saturated-base-background: unset !important; --yt-saturated-raised-background: unset !important; --yt-saturated-additive-background: unset !important; --yt-saturated-text-primary: unset !important; --yt-saturated-text-secondary: unset !important; --yt-saturated-outline:  unset !important; --yt-saturated-key-light:  unset !important; --yt-saturated-collection-stack:  unset !important; --yt-saturated-inverted-background: unset !important; --yt-saturated-text-primary-inverse:  unset !important; --yt-saturated-text-disabled: unset !important; --yt-saturated-drop-shadow: unset !important; --yt-saturated-card-outline: unset !important; --yt-saturated-overlay-background: unset !important; --yt-saturated-overlay-text-primary: unset !important; )
 youtube.com##ytd-watch-metadata[description-collapsed] [style*="color:"] { color: unset !important; }
 !移除YouTube 主頁影片懸停時出現彩色覆蓋
-youtube.com###primary yt-lockup-view-model yt-touch-feedback-shape
+youtube.com##yt-lockup-view-model yt-touch-feedback-shape
 youtube.com##html[dark] yt-lockup-metadata-view-model :is(.yt-lockup-metadata-view-model__metadata,.ytLockupMetadataViewModelMetadata)[style^="color:"]:style( color: #aaa !important; )
 youtube.com##html[dark] yt-lockup-metadata-view-model :is(.yt-lockup-metadata-view-model__title,.ytLockupMetadataViewModelTitle)[style^="color:"]:style( color: #f1f1f1 !important; )
 youtube.com##html:not([dark]) yt-lockup-metadata-view-model :is(.yt-lockup-metadata-view-model__metadata,.ytLockupMetadataViewModelMetadata)[style^="color:"]:style( color: #606060 !important; )
