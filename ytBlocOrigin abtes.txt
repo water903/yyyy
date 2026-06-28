@@ -22,7 +22,7 @@ youtube.com##.ytd-thumbnail-overlay-resume-playback-renderer:style(background:re
 youtube.com##ytd-browse:is([page-subtype="home"],[page-subtype="subscriptions"]) #contents.ytd-rich-grid-renderer > :not(ytd-rich-item-renderer,ytd-continuation-item-renderer)
 
 !首頁上方多餘按鈕
-youtube.com##.style-default.ytd-masthead.style-scope
+youtube.com##.style-default.ytd-masthead
 youtube.com###voice-search-button
 youtube.com###buttons > ytd-button-renderer.ytd-masthead
 !首頁上方 讓你耳目一新 多餘按鈕
@@ -52,6 +52,9 @@ youtube.com##[aria-label="加入待播清單"]
 ! 影片下方 多餘按鈕
 youtube.com##.ytd-download-button-renderer
 youtube.com###actions :is([aria-label="Share"],[aria-label="剪輯片段"],[aria-label="超級感謝"],[aria-label="Save to playlist"],[aria-label="More actions"]), #social-links :is([aria-label="Videos"],[aria-label="About"])
+!YT - Below the Player Buttons 超級感謝,剪輯片段
+youtube.com##ytd-menu-service-item-renderer:has([d^="M16.25 2A6.7 6.7 0 0012 3.509 6.75 6.75"],[d^="M6 2.002a4 4 0 102.03 7.445L10.586"])
+
 !影片下方更多清單 多餘按鈕
 youtube.com##ytd-menu-service-item-download-renderer.ytd-menu-popup-renderer
 ! 影片播放列 多餘按鈕
@@ -69,6 +72,7 @@ youtube.com##.ytp-button.ytp-playlist-menu-button
 youtube.com##.ytp-spinner
 ! YT Player - Settings - Hide Stable Volume, Ambient mode, Annotations, and Sleep timer
 youtube.com##.ytp-settings-menu .ytp-menuitem:has([d^="M7 13H5v-2h2v2zm3-4H8v6h2V9zm3"],[d^="M21 7v10H3V7h18m1-1H2v12h20V6zM11"],[d^="M17.5,7c1.93,0,3.5,1.57,3.5,3.5c0"],[d^="M16.67,4.31C19.3,5.92,21,8.83"])
+
 !暫停後推薦
 youtube-nocookie.com,youtube.com##.ytp-pause-overlay, .show-video-thumbnail-button
 youtube-nocookie.com,youtube.com##iframe ~ #topvbar > #rvid
@@ -107,7 +111,7 @@ youtube.com,youtube-nocookie.com##.ytp-info-panel-preview
 !隱藏 播放清單 推薦影片
 youtube.com##ytd-browse[page-subtype="home"] ytd-rich-section-renderer:not(:has(ytd-feed-nudge-renderer))
 !防止即時更新統計資料（例如按讚和觀看次數）
-!||youtube.com/youtubei/v1/updated_metadata
+||youtube.com/youtubei/v1/updated_metadata
 !隱藏「智慧」動畫 這些動畫通常包含“lottie”邊框
 youtube.com##:is(.smartimation__content,.animated-action__content-with-background)>:has(>lottie-component)
 !Live即時反應疊加
