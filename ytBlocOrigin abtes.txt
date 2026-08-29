@@ -16,7 +16,7 @@ youtube.com###progress.yt-page-navigation-progress:style(background:red!importan
 !阻止播放器上的粉紅色進度條
 youtube.com##.ytp-play-progress:style(background:red!important;)
 !/playlist?list=上 縮圖進度色調
-youtube.com##.ytd-thumbnail-overlay-resume-playback-renderer:style(background:red!important;)
+youtube.com##.ytwThumbnailOverlayResumePlaybackRendererThumbnailOverlayResumePlaybackProgress:style(background:red!important;)
 
 ! Homepage - distractions (non-videos) | temporary fix: remove gaps + ghost renderer
 youtube.com##ytd-browse:is([page-subtype="home"],[page-subtype="subscriptions"]) #contents.ytd-rich-grid-renderer > :not(ytd-rich-item-renderer,ytd-continuation-item-renderer)
